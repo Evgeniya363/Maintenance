@@ -25,6 +25,7 @@ public class UI {
                         System.out.println("key = " + key);
                         break;
                     case "0":
+                        System.out.println("key = " + key);
                         return;
                     default:
                         System.out.println("Такой команды нет");
