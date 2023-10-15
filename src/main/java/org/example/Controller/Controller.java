@@ -1,2 +1,5 @@
-package org.example.Controller;public class Controller {
+package org.example.Controller;
+import org.example.View.UI;
+public class Controller {
+    public Controller() {new UI();}
 }
