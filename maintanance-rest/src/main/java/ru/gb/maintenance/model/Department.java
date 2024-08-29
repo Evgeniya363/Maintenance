@@ -1,24 +1,25 @@
 package ru.gb.maintenance.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+
 @Entity
+@Getter
+@Setter
 @Table(name = "department")
-public class Department implements Identifiable {
+public class Department extends BaseEntity {
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
-    @Column
-    private String name;
+//    @Column(name = "company_id")
+//    @JsonProperty("company_id")
+//    private Long companyId;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
-    private Company company;
+    Company company;
 
 }

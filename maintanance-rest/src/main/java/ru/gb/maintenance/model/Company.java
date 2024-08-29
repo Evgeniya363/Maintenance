@@ -2,19 +2,14 @@ package ru.gb.maintenance.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "company")
-public class Company implements Identifiable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    Long id;
-
-    @Column
-    String name;
+public class Company extends BaseEntity {
 
 }

@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @Entity
 @Table(name = "employee")
-public class Employee {
+public class Employee extends BaseEntity {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -40,6 +40,7 @@ public class Employee {
         return getInitial(firstName) + getInitial(patronymic) + secondName;
     }
 
+    @Transient
     private String getInitial(String name) {
         return name.isEmpty() ? "" : name.charAt(0) + ". ";
     }

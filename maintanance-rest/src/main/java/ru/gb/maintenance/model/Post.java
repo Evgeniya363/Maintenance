@@ -4,16 +4,11 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "post")
-public class Post implements Identifiable {
+public class Post extends BaseEntity {
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    Long id;
-
-    String name;
 
 }

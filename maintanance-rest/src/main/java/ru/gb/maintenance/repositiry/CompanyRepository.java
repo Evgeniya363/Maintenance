@@ -1,7 +1,9 @@
 package ru.gb.maintenance.repositiry;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import ru.gb.maintenance.model.Company;
 
-public interface CompanyRepository  extends JpaRepository<Company, Long> {
+@Repository
+public interface CompanyRepository extends BaseEntityRepository<Company> {
+
 }

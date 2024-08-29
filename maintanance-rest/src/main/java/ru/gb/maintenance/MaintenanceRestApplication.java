@@ -3,12 +3,6 @@ package ru.gb.maintenance;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import ru.gb.maintenance.model.Company;
-import ru.gb.maintenance.model.Department;
-import ru.gb.maintenance.model.Post;
-import ru.gb.maintenance.repositiry.CompanyRepository;
-import ru.gb.maintenance.repositiry.DepartmentRepository;
-import ru.gb.maintenance.repositiry.PostRepository;
 
 @SpringBootApplication
 public class MaintenanceRestApplication {

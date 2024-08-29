@@ -4,36 +4,40 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.gb.maintenance.service.CrudOperable;
+import ru.gb.maintenance.model.BaseEntity;
+import ru.gb.maintenance.model.map.BaseMapper;
+import ru.gb.maintenance.service.BaseEntityService;
+import ru.gb.maintenance.service.BaseEntityServiceImpl;
 
 import java.util.List;
 
 @RequiredArgsConstructor
-public abstract class EntityController<T, S extends CrudOperable<T>> implements Responsable<T> {
+public class BaseEntityControllerImpl<T extends BaseEntity, D> implements BaseEntityController<T, D> {
 
-    private final S service;
+    private final BaseEntityService<T,D> service;
+//    private final M mapper;
 
-    @Override
+//    @Override
     @GetMapping
-    public ResponseEntity<List<T>> findAll() {
+    public ResponseEntity<List<D>> findAll() {
 
         return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
     }
 
-    @Override
+//    @Override
     @GetMapping("/{id}")
-    public ResponseEntity<T> findById(@PathVariable Long id) {
+    public ResponseEntity<D> findById(@PathVariable Long id) {
         return service.findById(id)
                 .map(post -> ResponseEntity.status(HttpStatus.OK).body(post))
                 .orElseGet(() -> ResponseEntity.notFound().build());
 
     }
 
-    @Override
+//    @Override
     @PostMapping
-    public ResponseEntity<T> create(@RequestBody T object) {
+    public ResponseEntity<D> create(@RequestBody D object) {
 
-        object = service.create(object);
+        object = service.save(object);
         if (object == null) {
             return ResponseEntity.notFound().build();
         }
@@ -44,20 +48,20 @@ public abstract class EntityController<T, S extends CrudOperable<T>> implements 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 
-        service.delete(id);
+        service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
     @Override
     @PutMapping("/{id}")
-    public ResponseEntity<T> update(@PathVariable Long id, @RequestBody T object) {
+    public ResponseEntity<D> update(@PathVariable Long id, @RequestBody D dto) {
 
-        object = service.update(id, object);
-        if (object == null) {
+        dto = service.updateById(dto, id);
+        if (dto == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.status(HttpStatus.OK).body(object);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+
 
     }
-
 }
