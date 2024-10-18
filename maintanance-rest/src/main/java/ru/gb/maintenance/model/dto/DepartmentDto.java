@@ -4,13 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-//@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class DepartmentDto implements BaseDto {
-
-    private Long id;
-
-    private String name;
+public class DepartmentDto extends BaseDto {
 
     @JsonProperty("company_id")
     Long companyId;

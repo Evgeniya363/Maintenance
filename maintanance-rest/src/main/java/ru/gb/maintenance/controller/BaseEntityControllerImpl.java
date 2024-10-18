@@ -12,12 +12,10 @@ import ru.gb.maintenance.service.BaseEntityServiceImpl;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class BaseEntityControllerImpl<T extends BaseEntity, D> implements BaseEntityController<T, D> {
+public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implements BaseEntityController<T, D> {
 
-    private final BaseEntityService<T,D> service;
-//    private final M mapper;
+    protected final BaseEntityService<T,D> service;
 
-//    @Override
     @GetMapping
     public ResponseEntity<List<D>> findAll() {
 

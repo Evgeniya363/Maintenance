@@ -15,8 +15,8 @@ import java.util.Optional;
 @Service
 public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends BaseDto, M extends BaseMapper<T,D>> implements BaseEntityService<T, D>{
 
-    private final BaseEntityRepository<T> repository;
-    private final M mapper;
+    protected final BaseEntityRepository<T> repository;
+    protected final M mapper;
 
     @Autowired
     public BaseEntityServiceImpl(BaseEntityRepository<T> baseEntityRepository, M mapper) {
@@ -26,7 +26,6 @@ public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends Base
 
     @Override
     public D save(D dto) {
-        System.out.println(dto);
         return mapper.toDto(repository.save(mapper.toEntity(dto)));
     }
 
@@ -45,14 +44,14 @@ public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends Base
         //if (!id.equals(dto.getId())) throw new InputMismatchException();
         repository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("ID [" + id + "] is missing!"));
-
-        T entity = mapper.toEntity(dto);
+        dto.setId(id);
+//        T entity = mapper.toEntity(dto);
 //        entity.setId(id);
 //        T save = repository.save(entity);
 //        D dto1 = mapper.toDto(save);
 //        return dto1;
 
-        return mapper.toDto(repository.save(entity));
+        return mapper.toDto(repository.save(mapper.toEntity(dto)));
 
     }
 

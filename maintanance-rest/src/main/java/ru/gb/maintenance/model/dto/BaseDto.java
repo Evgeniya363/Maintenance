@@ -4,16 +4,11 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-public interface BaseDto {
+@Data
+public abstract class BaseDto implements HasId {
 
-//    private Long id;
-//
-//    private String name;
+    protected Long id;
 
-    public Long getId();
+    protected String name;
 
-//    @Override
-//    public String toString() {
-//        return getClass().getSimpleName()+":"+id;
-//    }
-}
+};

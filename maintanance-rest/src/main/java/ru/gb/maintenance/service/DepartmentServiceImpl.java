@@ -7,6 +7,8 @@ import ru.gb.maintenance.model.map.DepartmentMapper;
 import ru.gb.maintenance.repositiry.BaseEntityRepository;
 import ru.gb.maintenance.repositiry.DepartmentRepository;
 
+import java.util.List;
+
 @Service
 public class DepartmentServiceImpl extends BaseEntityServiceImpl<Department, DepartmentDto, DepartmentMapper> {
     final DepartmentRepository repository;
@@ -14,5 +16,9 @@ public class DepartmentServiceImpl extends BaseEntityServiceImpl<Department, Dep
     public DepartmentServiceImpl(BaseEntityRepository<Department> baseEntityRepository, DepartmentMapper mapper, DepartmentRepository repository) {
         super(baseEntityRepository, mapper);
         this.repository = repository;
+    }
+
+    public List<Department> findByCompanyId(Long entityId) {
+        return repository.findByCompanyId(entityId);
     }
 }
