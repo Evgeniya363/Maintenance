@@ -1,4 +1,9 @@
 package ru.gb.maintenance.model.dto;
 
-public class PostDto {
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class PostDto extends BaseDto {
 }

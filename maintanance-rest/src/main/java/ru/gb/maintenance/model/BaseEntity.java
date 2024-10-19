@@ -2,7 +2,7 @@ package ru.gb.maintenance.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,7 +18,7 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
 
-    String name;
+    protected String name;
 
     @CreationTimestamp
     @JsonProperty("created_at")

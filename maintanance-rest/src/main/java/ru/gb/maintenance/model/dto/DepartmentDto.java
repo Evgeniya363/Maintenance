@@ -11,6 +11,4 @@ public class DepartmentDto extends BaseDto {
     @JsonProperty("company_id")
     Long companyId;
 
-    @JsonProperty("company_name")
-    String companyName;
 }

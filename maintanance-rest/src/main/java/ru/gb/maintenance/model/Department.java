@@ -14,10 +14,6 @@ import lombok.Setter;
 @Table(name = "department")
 public class Department extends BaseEntity {
 
-//    @Column(name = "company_id")
-//    @JsonProperty("company_id")
-//    private Long companyId;
-
     @ManyToOne
     @JoinColumn(name = "company_id")
     Company company;

@@ -7,29 +7,33 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.gb.maintenance.model.Category;
 import ru.gb.maintenance.model.Company;
+import ru.gb.maintenance.model.dto.CategoryDto;
 import ru.gb.maintenance.model.dto.CompanyDto;
 import ru.gb.maintenance.model.dto.DepartmentDto;
+import ru.gb.maintenance.model.dto.EquipmentDto;
+import ru.gb.maintenance.service.CategoryService;
 import ru.gb.maintenance.service.CompanyServiceImpl;
 import ru.gb.maintenance.service.DepartmentService;
-import ru.gb.maintenance.service.DepartmentServiceImpl;
+import ru.gb.maintenance.service.EquipmentService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/companies")
-public class CompanyControllerImpl extends BaseEntityControllerImpl<Company, CompanyDto>{
+@RequestMapping("/categories")
+public class CategoryControllerImpl extends BaseEntityControllerImpl<Category, CategoryDto>{
 
     @Autowired
-    DepartmentService departmentService;
+    EquipmentService equipmentService;
 
-    public CompanyControllerImpl(CompanyServiceImpl service) {
+    public CategoryControllerImpl(CategoryService service) {
         super(service);
     }
 
     @GetMapping("/{id}/departments")
-    public ResponseEntity<List<DepartmentDto>> findDepartmentByCompanyId(@PathVariable Long id) {
+    public ResponseEntity<List<EquipmentDto>> findEquipmentsByCategoryId(@PathVariable Long id) {
 
-        return ResponseEntity.status(HttpStatus.OK).body(departmentService.findByCompanyId(id));
+        return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByCategoryId(id));
     }
 }

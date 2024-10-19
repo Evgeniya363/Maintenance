@@ -5,6 +5,5 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class CompanyDto extends BaseDto {
-
+public class CategoryDto extends BaseDto {
 }
