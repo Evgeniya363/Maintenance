@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-@Service
+//@Service
 public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends BaseDto, M extends BaseMapper<T,D>> implements BaseEntityService<T, D>{
 
-    protected final BaseEntityRepository<T> repository;
+    private final BaseEntityRepository<T> repository;
     protected final M mapper;
 
     @Autowired

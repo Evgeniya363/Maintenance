@@ -14,8 +14,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implements BaseEntityController<T, D> {
 
-    protected final BaseEntityService<T,D> service;
+    protected final BaseEntityService<T, D> service;
 
+//    @Override
     @GetMapping
     public ResponseEntity<List<D>> findAll() {
 
@@ -31,7 +32,7 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
 
     }
 
-//    @Override
+    //    @Override
     @PostMapping
     public ResponseEntity<D> create(@RequestBody D object) {
 
@@ -42,7 +43,7 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
         return ResponseEntity.status(HttpStatus.CREATED).body(object);
     }
 
-    @Override
+//    @Override
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 
@@ -50,7 +51,7 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
         return ResponseEntity.noContent().build();
     }
 
-    @Override
+//    @Override
     @PutMapping("/{id}")
     public ResponseEntity<D> update(@PathVariable Long id, @RequestBody D dto) {
 

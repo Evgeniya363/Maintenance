@@ -3,18 +3,21 @@ package ru.gb.maintenance.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
 @Entity
+@Getter
+@Setter
 @Table(name = "employee")
 public class Employee extends BaseEntity {
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+//    @Id
+//    @EqualsAndHashCode.Include
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+//    private Long id;
 
     @Column(name = "first_name")
-    private String firstName;
+    private String name;
 
     @Column(name = "second_name")
     private String secondName;
@@ -35,9 +38,9 @@ public class Employee extends BaseEntity {
 //    }
 
     @Transient
-    @Column(name = "abbreviated_name")
+    @Column(name = "full_name")
     private String abbreviatedName() {
-        return getInitial(firstName) + getInitial(patronymic) + secondName;
+        return getInitial(name) + getInitial(patronymic) + secondName;
     }
 
     @Transient
