@@ -19,11 +19,13 @@ public class EquipmentDto extends BaseDto{
     @JsonProperty("employee_id")
     private Long employeeId;
 
+
     @JsonProperty("serial_number")
     private String serialNumber;
 
     @JsonProperty("inventory_number")
     private String inventoryNumber;
+
 
     @JsonProperty("service_number")
     private String serviceNumber;

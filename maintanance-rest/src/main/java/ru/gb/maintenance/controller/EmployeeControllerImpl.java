@@ -22,13 +22,9 @@ public class EmployeeControllerImpl extends BaseEntityControllerImpl<Employee, E
         super(service);
     }
 
-//    @JsonView(EmployeeView.Summary.class)
     @GetMapping("/{id}/equipments")
     public ResponseEntity<List<EquipmentDto>> findEquipmentsByEmployeeId(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByEmployeeId(id));
     }
-
-
-
 
 }
