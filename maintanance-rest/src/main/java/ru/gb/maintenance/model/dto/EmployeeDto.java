@@ -7,7 +7,20 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class EmployeeDto extends BaseDto {
-    @JsonProperty("full_name")
-    String fullName;
+
+    @JsonProperty("first_name")
+    private String name;
+
+    @JsonProperty("patronymic") // оставила, т.к. влияет на порядок полей в ответе
+    private String patronymic;
+
+    @JsonProperty("second_name")
+    private String secondName;
+
+    @JsonProperty("department_id")
+    private Long departmentId;
+
+    @JsonProperty("post_id")
+    private Long postId;
 
 }

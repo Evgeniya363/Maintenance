@@ -10,6 +10,6 @@ import ru.gb.maintenance.model.dto.DepartmentDto;
 @Mapper(config = MappingConfiguration.class)
 public interface CompanyMapper extends BaseMapper<Company, CompanyDto> {
 
-    DepartmentDto toDto(Department department);
+//    CompanyDto toDto(Company company);
 
 }

@@ -8,7 +8,6 @@ import ru.gb.maintenance.model.map.EmployeeMapper;
 import ru.gb.maintenance.repositiry.EmployeeRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl extends BaseEntityServiceImpl<Employee, EmployeeDto, EmployeeMapper> implements EmployeeService {

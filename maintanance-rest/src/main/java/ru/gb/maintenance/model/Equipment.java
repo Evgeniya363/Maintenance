@@ -36,6 +36,9 @@ public class Equipment extends BaseEntity {
     @Column(name = "inventory_number")
     private String inventoryNumber;
 
+    @Column(name = "service_number")
+    private String serviceNumber;
+
     @Column(name = "start_usage_date")
     private LocalDate startUsageDate;
 
