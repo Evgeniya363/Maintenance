@@ -18,7 +18,7 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
 
-    protected String name;
+//    protected String name;
 
     @CreationTimestamp
     @JsonProperty("created_at")

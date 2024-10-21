@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 public class EmployeeDto extends BaseDto {
 
     @JsonProperty("first_name")
-    private String name;
+    private String firstName;
 
     @JsonProperty("patronymic") // оставила, т.к. влияет на порядок полей в ответе
     private String patronymic;

@@ -1,17 +1,19 @@
 package ru.gb.maintenance.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
-@Getter
-@Setter
 @Table(name = "employee")
 public class Employee extends BaseEntity {
 
     @Column(name = "first_name")
-    private String name;
+    private String firstName;
 
     private String patronymic;
 

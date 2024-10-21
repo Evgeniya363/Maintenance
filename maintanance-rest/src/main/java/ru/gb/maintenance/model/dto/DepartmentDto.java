@@ -8,6 +8,8 @@ import lombok.EqualsAndHashCode;
 @Data
 public class DepartmentDto extends BaseDto {
 
+    private String name;
+
     @JsonProperty("company_id")
     Long companyId;
 
