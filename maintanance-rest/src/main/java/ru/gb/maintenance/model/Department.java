@@ -8,11 +8,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
-@Getter
-@Setter
 @Table(name = "department")
 public class Department extends BaseEntity {
+
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "company_id")

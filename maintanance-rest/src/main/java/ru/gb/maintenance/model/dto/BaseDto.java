@@ -6,9 +6,5 @@ import lombok.Setter;
 
 @Data
 public abstract class BaseDto implements HasId {
-
     protected Long id;
-
-    protected String name;
-
 };

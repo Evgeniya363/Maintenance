@@ -2,21 +2,17 @@ package ru.gb.maintenance.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
-@Getter
-@Setter
-@Table(name = "employee")
+@Table(name = "equipment")
 public class Equipment extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
