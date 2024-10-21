@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b30d9ac2-ee18-4d8f-82a8-6ad4056d9924" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/BaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/BaseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/CategoryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/CompanyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/CompanyDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/DepartmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/DepartmentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/EmployeeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/EmployeeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/PostDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/CategoryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/PostMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/PostMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

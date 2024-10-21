@@ -6,7 +6,5 @@ import ru.gb.maintenance.model.dto.PostDto;
 
 @Mapper(config = MappingConfiguration.class)
 public interface PostMapper extends BaseMapper<Post, PostDto> {
-
     PostDto toDto(Post department);
-
 }

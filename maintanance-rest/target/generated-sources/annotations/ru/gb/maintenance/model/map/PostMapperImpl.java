@@ -9,7 +9,7 @@ import ru.gb.maintenance.model.dto.PostDto;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-21T22:15:36+0300",
+    date = "2024-10-21T23:40:43+0300",
     comments = "version: 1.6.0, compiler: javac, environment: Java 22.0.1 (Oracle Corporation)"
 )
 @Component
