@@ -12,7 +12,7 @@ import ru.gb.maintenance.service.ManufacturerServiceImpl;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-22T11:12:01+0300",
+    date = "2024-10-22T12:23:44+0300",
     comments = "version: 1.6.0, compiler: javac, environment: Java 22.0.1 (Oracle Corporation)"
 )
 @Component

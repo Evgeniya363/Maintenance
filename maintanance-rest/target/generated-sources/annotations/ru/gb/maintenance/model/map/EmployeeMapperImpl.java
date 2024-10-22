@@ -14,7 +14,7 @@ import ru.gb.maintenance.service.PostServiceImpl;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-21T22:44:57+0300",
+    date = "2024-10-22T12:23:44+0300",
     comments = "version: 1.6.0, compiler: javac, environment: Java 22.0.1 (Oracle Corporation)"
 )
 @Component
@@ -50,7 +50,7 @@ public class EmployeeMapperImpl implements EmployeeMapper {
         employeeDto.setDepartmentId( entityDepartmentId( entity ) );
         employeeDto.setPostId( entityPostId( entity ) );
         employeeDto.setId( entity.getId() );
-        employeeDto.setName( entity.getName() );
+        employeeDto.setFirstName( entity.getFirstName() );
         employeeDto.setPatronymic( entity.getPatronymic() );
         employeeDto.setSecondName( entity.getSecondName() );
 
@@ -68,7 +68,7 @@ public class EmployeeMapperImpl implements EmployeeMapper {
         employee.setDepartment( departmentServiceImpl.getObjectById( dto.getDepartmentId() ) );
         employee.setPost( postServiceImpl.getObjectById( dto.getPostId() ) );
         employee.setId( dto.getId() );
-        employee.setName( dto.getName() );
+        employee.setFirstName( dto.getFirstName() );
         employee.setPatronymic( dto.getPatronymic() );
         employee.setSecondName( dto.getSecondName() );
 

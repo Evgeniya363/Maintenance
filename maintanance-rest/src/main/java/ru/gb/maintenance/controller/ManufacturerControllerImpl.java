@@ -21,8 +21,15 @@ import java.util.List;
 @RequestMapping("/manufacturers")
 public class ManufacturerControllerImpl extends BaseEntityControllerImpl<Manufacturer, ManufacturerDto> {
 
+    @Autowired
+    EquipmentService equipmentService;
 
     public ManufacturerControllerImpl(ManufacturerService service) {
         super(service);
+    }
+
+    @GetMapping("/{id}/equipments")
+    public ResponseEntity<List<EquipmentDto>> findEmployeesByManufacturerId(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByManufacturerId(id));
     }
 }

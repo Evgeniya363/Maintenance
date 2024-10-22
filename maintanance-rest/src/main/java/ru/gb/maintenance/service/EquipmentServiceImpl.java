@@ -38,4 +38,14 @@ public class EquipmentServiceImpl extends BaseEntityServiceImpl<Equipment, Equip
     public List<EquipmentDto> findByModelId(Long id) {
         return mapper.toDtoS(repository.findByModelId(id));
     }
+
+    @Override
+    public List<EquipmentDto> findByCompanyId(Long id) {
+        return mapper.toDtoS(repository.findByCompanyId(id));
+    }
+
+    @Override
+    public List<EquipmentDto> findByManufacturerId(Long id) {
+        return mapper.toDtoS(repository.findByManufacturerId(id));
+    }
 }
