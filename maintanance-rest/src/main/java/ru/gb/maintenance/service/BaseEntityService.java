@@ -1,6 +1,7 @@
 package ru.gb.maintenance.service;
 
 import ru.gb.maintenance.model.BaseEntity;
+import ru.gb.maintenance.model.dto.EquipmentDto;
 
 import java.util.List;
 import java.util.Optional;

@@ -12,4 +12,6 @@ public interface EquipmentRepository extends BaseEntityRepository<Equipment> {
     List<Equipment> findByEmployeeId(Long id);
 
     List<Equipment> findByDepartmentId(Long id);
+
+    List<Equipment> findByModelId(Long id);
 }

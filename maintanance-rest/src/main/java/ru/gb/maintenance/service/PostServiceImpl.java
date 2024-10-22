@@ -8,7 +8,6 @@ import ru.gb.maintenance.repositiry.PostRepository;
 
 @Service
 public class PostServiceImpl extends BaseEntityServiceImpl<Post, PostDto, PostMapper> implements PostService {
-
     public PostServiceImpl(PostRepository postRepository, PostMapper mapper) {
         super(postRepository, mapper);
     }

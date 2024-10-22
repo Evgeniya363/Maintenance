@@ -13,6 +13,9 @@ public class EquipmentDto extends BaseDto{
     @JsonProperty("category_id")
     private Long categoryId;
 
+    @JsonProperty("model_id")
+    private Long modelId;
+
     @JsonProperty("department_id")
     private Long departmentId;
 

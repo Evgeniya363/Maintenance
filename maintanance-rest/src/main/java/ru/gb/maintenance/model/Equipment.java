@@ -19,6 +19,10 @@ public class Equipment extends BaseEntity {
     private Category category;
 
     @ManyToOne
+    @JoinColumn(name = "model_id")
+    private Model model;
+
+    @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
 
