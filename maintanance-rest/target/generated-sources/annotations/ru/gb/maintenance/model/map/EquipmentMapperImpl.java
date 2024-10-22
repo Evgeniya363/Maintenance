@@ -9,14 +9,16 @@ import ru.gb.maintenance.model.Category;
 import ru.gb.maintenance.model.Department;
 import ru.gb.maintenance.model.Employee;
 import ru.gb.maintenance.model.Equipment;
+import ru.gb.maintenance.model.Model;
 import ru.gb.maintenance.model.dto.EquipmentDto;
 import ru.gb.maintenance.service.CategoryServiceImpl;
 import ru.gb.maintenance.service.DepartmentServiceImpl;
 import ru.gb.maintenance.service.EmployeeServiceImpl;
+import ru.gb.maintenance.service.ModelService;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-21T22:15:36+0300",
+    date = "2024-10-22T11:20:22+0300",
     comments = "version: 1.6.0, compiler: javac, environment: Java 22.0.1 (Oracle Corporation)"
 )
 @Component
@@ -28,6 +30,8 @@ public class EquipmentMapperImpl implements EquipmentMapper {
     private EmployeeServiceImpl employeeServiceImpl;
     @Autowired
     private CategoryServiceImpl categoryServiceImpl;
+    @Autowired
+    private ModelService modelService;
 
     @Override
     public List<EquipmentDto> toDtoS(List<Equipment> listT) {
@@ -52,10 +56,10 @@ public class EquipmentMapperImpl implements EquipmentMapper {
         EquipmentDto equipmentDto = new EquipmentDto();
 
         equipmentDto.setCategoryId( equipmentCategoryId( equipment ) );
+        equipmentDto.setModelId( equipmentModelId( equipment ) );
         equipmentDto.setEmployeeId( equipmentEmployeeId( equipment ) );
         equipmentDto.setDepartmentId( equipmentDepartmentId( equipment ) );
         equipmentDto.setId( equipment.getId() );
-        equipmentDto.setName( equipment.getName() );
         equipmentDto.setSerialNumber( equipment.getSerialNumber() );
         equipmentDto.setInventoryNumber( equipment.getInventoryNumber() );
         equipmentDto.setServiceNumber( equipment.getServiceNumber() );
@@ -74,10 +78,10 @@ public class EquipmentMapperImpl implements EquipmentMapper {
         Equipment equipment1 = new Equipment();
 
         equipment1.setCategory( categoryServiceImpl.getObjectById( equipment.getCategoryId() ) );
+        equipment1.setModel( modelService.getObjectById( equipment.getModelId() ) );
         equipment1.setEmployee( employeeServiceImpl.getObjectById( equipment.getEmployeeId() ) );
         equipment1.setDepartment( departmentServiceImpl.getObjectById( equipment.getDepartmentId() ) );
         equipment1.setId( equipment.getId() );
-        equipment1.setName( equipment.getName() );
         equipment1.setSerialNumber( equipment.getSerialNumber() );
         equipment1.setInventoryNumber( equipment.getInventoryNumber() );
         equipment1.setServiceNumber( equipment.getServiceNumber() );
@@ -93,6 +97,14 @@ public class EquipmentMapperImpl implements EquipmentMapper {
             return null;
         }
         return category.getId();
+    }
+
+    private Long equipmentModelId(Equipment equipment) {
+        Model model = equipment.getModel();
+        if ( model == null ) {
+            return null;
+        }
+        return model.getId();
     }
 
     private Long equipmentEmployeeId(Equipment equipment) {

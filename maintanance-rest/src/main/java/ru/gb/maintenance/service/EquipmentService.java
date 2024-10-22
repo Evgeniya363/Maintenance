@@ -14,4 +14,6 @@ public interface EquipmentService extends BaseEntityService<Equipment, Equipment
     List<EquipmentDto> findByEmployeeId(Long id);
 
     List<EquipmentDto> findByDepartmentId(Long id);
+
+    List<EquipmentDto> findByModelId(Long id);
 }
