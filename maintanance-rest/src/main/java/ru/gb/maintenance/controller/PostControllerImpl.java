@@ -24,9 +24,6 @@ public class PostControllerImpl extends BaseEntityControllerImpl<Post, PostDto> 
     @Autowired
     EmployeeService employeeService;
 
-    @Autowired
-    EquipmentService equipmentService;
-
     public PostControllerImpl(PostServiceImpl service) {
         super(service);
     }
@@ -36,9 +33,5 @@ public class PostControllerImpl extends BaseEntityControllerImpl<Post, PostDto> 
         return ResponseEntity.status(HttpStatus.OK).body(employeeService.findByPostId(id));
     }
 
-    @GetMapping("/{id}/equipments")
-    public ResponseEntity<List<EquipmentDto>> findEmployeesByCategoryId(@PathVariable Long id) {
-        return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByCategoryId(id));
-    }
 
 }

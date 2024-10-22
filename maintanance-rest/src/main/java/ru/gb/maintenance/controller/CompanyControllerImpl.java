@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.gb.maintenance.model.Company;
 import ru.gb.maintenance.model.dto.CompanyDto;
 import ru.gb.maintenance.model.dto.DepartmentDto;
+import ru.gb.maintenance.model.dto.EquipmentDto;
 import ru.gb.maintenance.service.CompanyServiceImpl;
 import ru.gb.maintenance.service.DepartmentService;
 import ru.gb.maintenance.service.DepartmentServiceImpl;
+import ru.gb.maintenance.service.EquipmentService;
 
 import java.util.List;
 
@@ -23,6 +25,9 @@ public class CompanyControllerImpl extends BaseEntityControllerImpl<Company, Com
     @Autowired
     DepartmentService departmentService;
 
+    @Autowired
+    EquipmentService equipmentService;
+
     public CompanyControllerImpl(CompanyServiceImpl service) {
         super(service);
     }
@@ -31,5 +36,10 @@ public class CompanyControllerImpl extends BaseEntityControllerImpl<Company, Com
     public ResponseEntity<List<DepartmentDto>> findDepartmentByCompanyId(@PathVariable Long id) {
 
         return ResponseEntity.status(HttpStatus.OK).body(departmentService.findByCompanyId(id));
+    }
+
+    @GetMapping("/{id}/equipments")
+    public ResponseEntity<List<EquipmentDto>> findEmployeesByCompanyId(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByCompanyId(id));
     }
 }

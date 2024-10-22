@@ -24,16 +24,16 @@ import java.util.List;
 @RequestMapping("/categories")
 public class CategoryControllerImpl extends BaseEntityControllerImpl<Category, CategoryDto>{
 
-    @Autowired
-    EquipmentService equipmentService;
+//    @Autowired
+//    EquipmentService equipmentService;
 
     public CategoryControllerImpl(CategoryService service) {
         super(service);
     }
 
-    @GetMapping("/{id}/departments")
-    public ResponseEntity<List<EquipmentDto>> findEquipmentsByCategoryId(@PathVariable Long id) {
-
-        return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByCategoryId(id));
-    }
+//    @GetMapping("/{id}/departments")
+//    public ResponseEntity<List<EquipmentDto>> findEquipmentsByCategoryId(@PathVariable Long id) {
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByCategoryId(id));
+//    }
 }
