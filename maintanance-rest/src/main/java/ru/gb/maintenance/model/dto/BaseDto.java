@@ -1,10 +1,9 @@
 package ru.gb.maintenance.model.dto;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import ru.gb.maintenance.model.criteria.Requestable;
 
 @Data
-public abstract class BaseDto implements HasId {
+public abstract class BaseDto implements HasId, Requestable {
     protected Long id;
 };

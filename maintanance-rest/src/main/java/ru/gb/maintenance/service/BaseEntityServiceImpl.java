@@ -26,8 +26,8 @@ public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends Base
 
     @Override
     public D save(D dto) {
-        System.out.println("1--------------------" + dto);
-        System.out.println("2--------------------" + mapper.toEntity(dto));
+//        System.out.println("1--------------------" + dto);
+//        System.out.println("2--------------------" + mapper.toEntity(dto));
 
         return mapper.toDto(repository.save(mapper.toEntity(dto)));
     }
