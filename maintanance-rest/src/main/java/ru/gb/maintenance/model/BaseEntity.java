@@ -6,13 +6,14 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import ru.gb.maintenance.model.dto.HasId;
 
 import java.time.LocalDateTime;
 
-@MappedSuperclass
 @Getter
 @Setter
-public abstract class BaseEntity {
+@MappedSuperclass // позволяет вынести общие поля в родительский класс, но при этом не создавать для него отдельную таблицу
+public abstract class BaseEntity implements HasId {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
