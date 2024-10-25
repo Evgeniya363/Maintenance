@@ -8,10 +8,10 @@ public enum Status {
     UNSCHEDULED("Внеплановая",2);
 
     private String name;
-    private int code;
+    private int id;
 
-    Status(String name, Integer code) {
+    Status(String name, Integer id) {
         this.name = name;
-        this.code = code;
+        this.id = id;
     }
 }

@@ -3,6 +3,9 @@ package ru.gb.maintenance.model.dtos;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import ru.gb.maintenance.model.Result;
+import ru.gb.maintenance.model.Status;
+import ru.gb.maintenance.model.Type;
 
 import java.time.LocalDate;
 
@@ -12,32 +15,21 @@ public class MaintenanceDto extends BaseDto{
 
     private LocalDate date;
 
-//    @JsonProperty("category")
-//    private String categoryName;
-//
-//    @JsonProperty("model_id")
-//    private Long modelId;
-//
-//    @JsonProperty("department_id")
-//    private Long departmentId;
+    @JsonProperty("equipment_id")
+    private Long equipmentId;
 
     @JsonProperty("contractor_id")
     private Long contractorId;
 
+    @JsonProperty("type_id")
+    private Type type;
 
-//    @JsonProperty("serial_number")
-//    private String serialNumber;
-//
-//    @JsonProperty("inventory_number")
-//    private String inventoryNumber;
-//
-//
-//    @JsonProperty("service_number")
-//    private String serviceNumber;
-//
-//    @JsonProperty("start_usage_date")
-//    private LocalDate startUsageDate;
-//
-//    @JsonProperty("maintenance_date")
-//    private LocalDate maintenanceDate;
+    @JsonProperty("status_id")
+    private Status status;
+
+    @JsonProperty("result_id")
+    private Result result;
+
+    private String reason;
+
 }

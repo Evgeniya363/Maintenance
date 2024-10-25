@@ -1,13 +1,17 @@
 package ru.gb.maintenance.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
-@Getter
-@Setter
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
 @Table(name ="maintenance")
 public class Maintenance extends SimpleEntity {
@@ -22,23 +26,13 @@ public class Maintenance extends SimpleEntity {
     @JoinColumn(name = "contractor_id")
     private Employee contractor;  // Подрядчик
 
-//    @Column(name =  "is_planned")
-//    @Enumerated(EnumType.ORDINAL)
+    private Type type;  // Плановая, внеплановая
 
-    @Column(name = "service_type")
-    private Type serviceType;  // Плановая, внеплановая: Enum
+    private Status status;  // Назначено, Выполнено, Не выполнено, Отложено, Возобоновлено
 
-    @Column(name = "service_state")
-    private Status serviceState;  // Назначено, Выполнено, Отложено, Возобоновлено: Enum
+    private Result result;  // В обработке, Выполнено, Не выполнено
 
-    private String reason;  // Причина: Enum
-
-    private String malfunction;  // Неисправность
-
-    private String troubleshooting;  //  Устранение неисправности
-
-    @Column(name = "spare_parts")  // запчасти
-    private String spareParts;
+    private String reason;  // Причина
 
 //    @Transient
 //    @OneToMany(
@@ -46,8 +40,11 @@ public class Maintenance extends SimpleEntity {
 //            cascade = CascadeType.ALL,
 //            orphanRemoval = true  // orphanRemoval = true — это параметр в аннотации @OneToMany, который используется для того, чтобы не оставалось дочерних сущностей без родительских.
 //    )
-//    List<Malfunction> malfunctions;  // Неисправности
+//    @JsonIgnore
+//    @JoinColumn(name = "maintenance_id")
 //
+//    List<Malfunction> malfunctions;  // Неисправности
+
 //    public void addMalfunction(Malfunction malfunction) {
 //        malfunctions.add(malfunction);
 //        malfunction.setMaintenance(this);

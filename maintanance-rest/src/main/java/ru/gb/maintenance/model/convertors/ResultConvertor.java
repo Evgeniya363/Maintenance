@@ -2,29 +2,29 @@ package ru.gb.maintenance.model.convertors;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import ru.gb.maintenance.model.Status;
+import ru.gb.maintenance.model.Result;
 
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-public class StatusConvertor implements AttributeConverter<Status, Integer> {
+public class ResultConvertor implements AttributeConverter<Result, Integer> {
 
     @Override
-    public Integer convertToDatabaseColumn(Status status) {
-        if (status == null) {
+    public Integer convertToDatabaseColumn(Result result) {
+        if (result == null) {
             return null;
         }
-        return status.getId();
+        return result.getId();
     }
 
     @Override
-    public Status convertToEntityAttribute(Integer code) {
+    public Result convertToEntityAttribute(Integer code) {
         if (code == null) {
             return null;
 
         }
 
-        return Stream.of(Status.values())
+        return Stream.of(Result.values())
                 .filter(c -> c.getId() == code)
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);

@@ -14,7 +14,7 @@ public class TypeConvertor implements AttributeConverter<Type, Integer> {
         if (serviceType == null) {
             return null;
         }
-        return serviceType.getCode();
+        return serviceType.getId();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class TypeConvertor implements AttributeConverter<Type, Integer> {
         }
 
         return Stream.of(Type.values())
-                .filter(c -> c.getCode() == code)
+                .filter(c -> c.getId() == code)
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
     }

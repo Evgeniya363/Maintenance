@@ -1,9 +1,12 @@
 package ru.gb.maintenance.repositories;
 
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
 import ru.gb.maintenance.model.Malfunction;
 
-public interface MalfunctionRepository extends BaseEntityRepository<Malfunction>, JpaSpecificationExecutor<Malfunction> {
+import java.util.List;
 
+@Repository
+public interface MalfunctionRepository extends BaseEntityRepository<Malfunction> {  //, JpaSpecificationExecutor<Malfunction> {
+    List<Malfunction> findByMaintenanceId(Long id);
 
 }
