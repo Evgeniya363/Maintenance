@@ -3,7 +3,7 @@ package ru.gb.maintenance.testService;
 
 import org.springframework.test.context.ActiveProfiles;
 import ru.gb.maintenance.model.BaseEntity;
-import ru.gb.maintenance.model.dto.BaseDto;
+import ru.gb.maintenance.model.dtos.BaseDto;
 
 import java.util.List;
 

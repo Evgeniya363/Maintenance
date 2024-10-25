@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ActiveProfiles;
 import ru.gb.maintenance.model.Company;
-import ru.gb.maintenance.model.dto.CompanyDto;
-import ru.gb.maintenance.model.map.CompanyMapper;
-import ru.gb.maintenance.model.map.CompanyMapperImpl;
+import ru.gb.maintenance.model.dtos.CompanyDto;
+import ru.gb.maintenance.model.maps.CompanyMapper;
+import ru.gb.maintenance.model.maps.CompanyMapperImpl;
 
 @ActiveProfiles("test")
 @Service

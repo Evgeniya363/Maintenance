@@ -3,9 +3,9 @@ package ru.gb.maintenance.testService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import ru.gb.maintenance.model.BaseEntity;
-import ru.gb.maintenance.model.dto.BaseDto;
-import ru.gb.maintenance.model.map.BaseMapper;
-import ru.gb.maintenance.repositiry.BaseEntityRepository;
+import ru.gb.maintenance.model.dtos.BaseDto;
+import ru.gb.maintenance.model.maps.BaseMapper;
+import ru.gb.maintenance.repositories.BaseEntityRepository;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;

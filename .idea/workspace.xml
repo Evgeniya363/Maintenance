@@ -5,31 +5,239 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b30d9ac2-ee18-4d8f-82a8-6ad4056d9924" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/criteria/EquipmentCriteria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/CategoryControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Maintenance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Malfunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/convertors/StatusConvertor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/convertors/TypeConvertor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/MaintenanceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/MalfunctionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/MaintenanceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/MalfunctionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/API.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/BaseEntityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/BaseEntityControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/CategoryControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/CompanyControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/DepartmentControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/EmployeeControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/EquipmentControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/ManufacturerControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/ModelControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/PostControllerImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/Responsable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Maintenance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Malfunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Type.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/convertors/TypeConvertor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/HasId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/MaintenanceDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/MalfunctionDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/BaseMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/CategoryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/CompanyMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/DepartmentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/EmployeeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/EquipmentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/ManufacturerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/MappingConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/ModelMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/PostMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/ReferenceMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/BaseEntityRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/CategoryRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/CompanyRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/DepartmentRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/EmployeeRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/EquipmentRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/MaintenanceRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/MalfunctionRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/ManufacturerRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/ModelRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/PostRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/BaseEntityServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/CategoryService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/CategoryServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/CompanyService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/CompanyServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/DepartmentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/DepartmentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/EmployeeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/EmployeeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/EquipmentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/EquipmentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/ManufacturerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/ManufacturerServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/ModelService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/ModelServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/PostService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/PostServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/EquipmentControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/EquipmentControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/BaseEntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/BaseEntityControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/BaseQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/BaseQueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/CategoryControllerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/CompanyControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/CompanyControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/DepartmentControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/DepartmentControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/EmployeeControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/EmployeeControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/EquipmentControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/EquipmentControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/ExceptionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/ManufacturerControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/ManufacturerControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/ModelControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/ModelControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/PostControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/PostControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/Responsable.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/Responsable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/BaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/BaseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/parameters/EquipmentParameters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/EquipmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/EquipmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/EquipmentSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/EquipmentSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EquipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EquipmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EquipmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/EquipmentControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/EquipmentControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/BaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/BaseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/CategoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/CompanyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/CompanyDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/DepartmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/DepartmentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/EmployeeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/EmployeeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/EquipmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/EquipmentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/HasId.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/HasId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/ManufacturerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/ManufacturerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/ModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/ModelDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dto/SimpleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/SimpleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/BaseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/BaseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/CategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/CompanyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/CompanyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/DepartmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/DepartmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/EmployeeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/EquipmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/EquipmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/ManufacturerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/ManufacturerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/MappingConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/MappingConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/ModelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/ModelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/map/ReferenceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/ReferenceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/BaseEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/BaseEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/CompanyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/DepartmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/EquipmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/EquipmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/EquipmentSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/EquipmentSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/ManufacturerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/ManufacturerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/ModelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/ModelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositiry/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/BaseEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/BaseEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/CompanyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/DepartmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EquipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/EquipmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/EquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/EquipmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/ManufacturerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/ManufacturerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/ManufacturerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/ManufacturerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/ModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/ModelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/ModelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/ModelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/service/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controller/BaseControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controllers/BaseControllerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controller/CompanyControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controllers/CompanyControllerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controller/DepartmentControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controllers/DepartmentControllerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controller/OldDepartmentControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/controllers/OldDepartmentControllerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/model/map/DepartmentMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/model/maps/DepartmentMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/service/DepartmentServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/services/DepartmentServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/service/TempDepartmentServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/services/TempDepartmentServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/BaseTestDataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/BaseTestDataCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/CompanyTestDataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/CompanyTestDataCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/Creatable.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/Creatable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/DepartmentTestDataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/test/java/ru/gb/maintenance/testService/DepartmentTestDataCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/API$AccessObjectRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/API$AccessObjectRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/API$CreateObjectRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/API$CreateObjectRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/API$InternalFailRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/API$InternalFailRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/API$NoContentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/API$NoContentRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/API$NotFoundResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/API$NotFoundResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/API.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/BaseEntityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/BaseEntityControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/BaseQueryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/BaseQueryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/CategoryControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/CompanyControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/DepartmentControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/EmployeeControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/EquipmentControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/ExceptionResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/ExceptionResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/ManufacturerControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/ModelControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/PostControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controller/Responsable.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/BaseEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/BaseDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/BaseDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/parameters/EquipmentParameters.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/EquipmentSpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/EquipmentSpecification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EquipmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EquipmentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EquipmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EquipmentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/CategoryMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/CategoryMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/CompanyMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/CompanyMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/DepartmentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/DepartmentMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/EmployeeMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/EmployeeMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/EquipmentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/EquipmentMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/ManufacturerMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/ManufacturerMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/ModelMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/ModelMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/PostMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/PostMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/BaseDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/BaseDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/CategoryDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/CategoryDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/CompanyDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/CompanyDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/DepartmentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/DepartmentDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/EmployeeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/EmployeeDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/EquipmentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/EquipmentDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/HasId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/ManufacturerDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/SimpleDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/ModelDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/ModelDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/PostDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/PostDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dto/SimpleDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/ManufacturerDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/BaseMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/CategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/CategoryMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/CategoryMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/CompanyMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/CompanyMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/CompanyMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/DepartmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/DepartmentMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/DepartmentMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/EmployeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/EmployeeMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/EmployeeMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/EquipmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/EquipmentMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/EquipmentMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/ManufacturerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/ManufacturerMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/ManufacturerMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/MappingConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/ModelMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/ModelMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/ModelMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/PostMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/PostMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/PostMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/map/ReferenceMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/BaseEntityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/CategoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/CompanyRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/DepartmentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/EmployeeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/EquipmentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/EquipmentSpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/EquipmentSpecification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/ManufacturerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/ModelRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositiry/PostRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/BaseEntityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/BaseEntityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/BaseEntityServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/CategoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/CategoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/CompanyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/CompanyServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/DepartmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/DepartmentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EmployeeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EmployeeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EquipmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/EquipmentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/ManufacturerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/ManufacturerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/ModelService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/ModelServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/PostService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/service/PostServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/CategoryMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/CategoryMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/CompanyMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/CompanyMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/DepartmentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/DepartmentMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/EmployeeMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/EmployeeMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/EquipmentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/EquipmentMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/ManufacturerMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/ManufacturerMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/ModelMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/ModelMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/map/PostMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/PostMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/gb/maintenance/MaintenanceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/gb/maintenance/MaintenanceApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +247,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
-        <option value="Interface" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -85,11 +294,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ru.gb.maintenance.controller" />
-      <recent name="ru.gb.maintenance.service" />
-      <recent name="ru.gb.maintenance.repositiry" />
-      <recent name="ru.gb.maintenance.model.map" />
+      <recent name="ru.gb.maintenance.model.convertors" />
+      <recent name="ru.gb.maintenance.model" />
       <recent name="ru.gb.maintenance.model.dto" />
+      <recent name="ru.gb.maintenance.repositiry" />
+      <recent name="ru.gb.maintenance.controller" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -115,9 +324,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controller/EquipmentControllerImpl.java</url>
+          <url>file://$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/EquipmentControllerImpl.java</url>
           <line>31</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Type.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

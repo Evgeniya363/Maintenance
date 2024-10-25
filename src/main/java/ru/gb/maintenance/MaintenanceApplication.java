@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import ru.gb.maintenance.model.Company;
 import ru.gb.maintenance.model.Post;
-import ru.gb.maintenance.repositiry.CompanyRepository;
-import ru.gb.maintenance.repositiry.PostRepository;
+import ru.gb.maintenance.repositories.CompanyRepository;
+import ru.gb.maintenance.repositories.PostRepository;
 
 @SpringBootApplication
 public class MaintenanceApplication {
