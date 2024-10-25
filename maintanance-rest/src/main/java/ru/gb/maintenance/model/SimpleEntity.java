@@ -9,7 +9,6 @@ import lombok.Setter;
 //@EqualsAndHashCode(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @Data
-@MappedSuperclass
-public abstract class SimpleEntity extends BaseEntity {
+public class SimpleEntity extends BaseEntity {
     protected String name;
 }

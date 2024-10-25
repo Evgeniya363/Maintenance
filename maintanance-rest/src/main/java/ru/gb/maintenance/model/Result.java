@@ -5,8 +5,7 @@ import lombok.Getter;
 @Getter
 public enum Result {
     INPROGRESS("В обработке", 0),
-    DONE("Выполнено", 1),
-    UNFULFILLED("Не выполнено", 2);
+    DONE("Завершено", 1);
 
     private String name;
     private int id;

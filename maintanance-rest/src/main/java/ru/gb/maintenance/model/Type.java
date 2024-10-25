@@ -6,9 +6,10 @@ import lombok.Getter;
 public enum Type {
     // Назначено, Выполнено, Отложено, Возобоновлено
     //Scheduled, Completed, Postponed, Resumed
-    SCHEDULED("Назначено", 1),
-    INWORKS("В работе", 2),
-    COMPLETED("Завершено", 3),
+    SCHEDULED("Назначено", 0),
+    INWORKS("В работе", 1),
+    COMPLETED("Выполнено", 2),
+    REJECTED("Отклонено", 3),
     POSTPONED("Отложено", 4),
     RESUMED("Возобоновлено", 5);
 

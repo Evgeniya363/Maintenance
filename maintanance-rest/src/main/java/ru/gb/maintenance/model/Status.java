@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum Status {
-    PLANNED("Плановая", 1),
-    UNSCHEDULED("Внеплановая",2);
+    PLANNED("Плановая", 0),
+    UNSCHEDULED("Внеплановая",1);
 
     private String name;
     private int id;

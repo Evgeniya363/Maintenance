@@ -1,5 +1,6 @@
 package ru.gb.maintenance.model.dtos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 @Data
 public class MaintenanceDto extends BaseDto{
 
+    @JsonFormat(pattern="dd.MM.yyyy")
     private LocalDate date;
 
     @JsonProperty("equipment_id")

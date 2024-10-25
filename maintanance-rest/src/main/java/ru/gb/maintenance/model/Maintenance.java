@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name ="maintenance")
-public class Maintenance extends SimpleEntity {
+public class Maintenance extends BaseEntity {
 
     private LocalDate date;
 
