@@ -1,5 +1,6 @@
 package ru.gb.maintenance.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -40,9 +41,11 @@ public class Equipment extends BaseEntity {
     private String serviceNumber;
 
     @Column(name = "start_usage_date")
+    @JsonFormat(pattern="dd.MM.yyyy")
     private LocalDate startUsageDate;
 
     @Column(name = "maintenance_date")
+    @JsonFormat(pattern="dd.MM.yyyy")
     private LocalDate maintenanceDate;
 
 }

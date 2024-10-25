@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import ru.gb.maintenance.model.dto.HasId;
+import ru.gb.maintenance.model.dtos.HasId;
 
 import java.time.LocalDateTime;
 
