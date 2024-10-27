@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b30d9ac2-ee18-4d8f-82a8-6ad4056d9924" name="Changes" comment="" />
+    <list default="true" id="b30d9ac2-ee18-4d8f-82a8-6ad4056d9924" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/MaintenanceControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/controllers/MaintenanceControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Equipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Maintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Maintenance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/EquipmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/EquipmentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/MaintenanceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/MaintenanceDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/MaintenanceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/maps/MaintenanceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/EquipmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/EquipmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/MaintenanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/repositories/MaintenanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/BaseEntityControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/BaseEntityControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/MaintenanceControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/controllers/MaintenanceControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Equipment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Maintenance.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/Maintenance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/EquipmentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/EquipmentDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/MaintenanceDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/dtos/MaintenanceDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/MaintenanceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/MaintenanceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/MaintenanceMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/model/maps/MaintenanceMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/EquipmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/EquipmentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/MaintenanceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/repositories/MaintenanceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/BaseEntityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/BaseEntityServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/MaintenanceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/classes/ru/gb/maintenance/services/MaintenanceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/CategoryMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/CategoryMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/CompanyMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/CompanyMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/DepartmentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/DepartmentMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/EmployeeMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/EmployeeMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/EquipmentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/EquipmentMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/MaintenanceMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/MaintenanceMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/MalfunctionMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/MalfunctionMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/ManufacturerMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/ManufacturerMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/ModelMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/ModelMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/PostMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintanance-rest/target/generated-sources/annotations/ru/gb/maintenance/model/maps/PostMapperImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,14 +133,14 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/Type.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/model/dtos/BaseDto.java</url>
           <line>7</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/maintanance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

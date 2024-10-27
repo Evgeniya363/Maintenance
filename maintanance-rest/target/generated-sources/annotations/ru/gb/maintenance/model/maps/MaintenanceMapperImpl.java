@@ -5,16 +5,14 @@ import java.util.List;
 import javax.annotation.processing.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.gb.maintenance.model.Employee;
 import ru.gb.maintenance.model.Equipment;
 import ru.gb.maintenance.model.Maintenance;
 import ru.gb.maintenance.model.dtos.MaintenanceDto;
-import ru.gb.maintenance.services.EmployeeServiceImpl;
 import ru.gb.maintenance.services.EquipmentServiceImpl;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-25T22:51:47+0300",
+    date = "2024-10-27T22:55:09+0300",
     comments = "version: 1.6.0, compiler: javac, environment: Java 22.0.1 (Oracle Corporation)"
 )
 @Component
@@ -22,8 +20,6 @@ public class MaintenanceMapperImpl implements MaintenanceMapper {
 
     @Autowired
     private EquipmentServiceImpl equipmentServiceImpl;
-    @Autowired
-    private EmployeeServiceImpl employeeServiceImpl;
 
     @Override
     public List<MaintenanceDto> toDtoS(List<Maintenance> listT) {
@@ -48,7 +44,6 @@ public class MaintenanceMapperImpl implements MaintenanceMapper {
         MaintenanceDto maintenanceDto = new MaintenanceDto();
 
         maintenanceDto.setEquipmentId( entityEquipmentId( entity ) );
-        maintenanceDto.setContractorId( entityContractorId( entity ) );
         maintenanceDto.setId( entity.getId() );
         maintenanceDto.setDate( entity.getDate() );
         maintenanceDto.setType( entity.getType() );
@@ -68,7 +63,6 @@ public class MaintenanceMapperImpl implements MaintenanceMapper {
         Maintenance maintenance = new Maintenance();
 
         maintenance.setEquipment( equipmentServiceImpl.getObjectById( dto.getEquipmentId() ) );
-        maintenance.setContractor( employeeServiceImpl.getObjectById( dto.getContractorId() ) );
         maintenance.setId( dto.getId() );
         maintenance.setDate( dto.getDate() );
         maintenance.setType( dto.getType() );
@@ -85,13 +79,5 @@ public class MaintenanceMapperImpl implements MaintenanceMapper {
             return null;
         }
         return equipment.getId();
-    }
-
-    private Long entityContractorId(Maintenance maintenance) {
-        Employee contractor = maintenance.getContractor();
-        if ( contractor == null ) {
-            return null;
-        }
-        return contractor.getId();
     }
 }
