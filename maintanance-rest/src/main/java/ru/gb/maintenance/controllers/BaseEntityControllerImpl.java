@@ -14,14 +14,11 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
 
     protected final BaseEntityService<T, D> service;
 
-//    @Override
     @GetMapping
     public ResponseEntity<List<D>> findAll() {
-
         return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
     }
 
-//    @Override
     @GetMapping("/{id}")
     public ResponseEntity<D> findById(@PathVariable Long id) {
         return service.findById(id)
@@ -30,7 +27,6 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
 
     }
 
-    //    @Override
     @PostMapping
     public ResponseEntity<D> create(@RequestBody D object) {
 
@@ -41,7 +37,6 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
         return ResponseEntity.status(HttpStatus.CREATED).body(object);
     }
 
-//    @Override
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 
@@ -49,7 +44,6 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
         return ResponseEntity.noContent().build();
     }
 
-//    @Override
     @PutMapping("/{id}")
     public ResponseEntity<D> update(@PathVariable Long id, @RequestBody D dto) {
 

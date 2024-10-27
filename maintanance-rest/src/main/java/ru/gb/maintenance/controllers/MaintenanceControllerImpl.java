@@ -22,8 +22,8 @@ import java.util.List;
 @RequestMapping("/maintenances")
 public class MaintenanceControllerImpl extends BaseEntityControllerImpl<Maintenance, MaintenanceDto> {
 
-//    @Autowired
-//    EmployeeService employeeService;
+    @Autowired
+    EmployeeService employeeService;
 
     public MaintenanceControllerImpl(MaintenanceServiceImpl service) {
         super(service);
