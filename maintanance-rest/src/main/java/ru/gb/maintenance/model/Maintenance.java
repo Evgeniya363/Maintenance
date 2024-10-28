@@ -1,39 +1,41 @@
 package ru.gb.maintenance.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name ="maintenance")
+@Table(name = "maintenance")
 public class Maintenance extends BaseEntity {
 
+    @Column(nullable = false)
     private LocalDate date;
 
     @ManyToOne
     @JoinColumn(name = "equipment_id")
     private Equipment equipment;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "contractor_id")
     private Employee contractor;  // Подрядчик
 
     private Type type;  // Плановая, внеплановая
 
-    private Status status;  // Назначено, Выполнено, Не выполнено, Отложено, Возобоновлено
+    private Status status;  // Назначено, Выполнено, Не выполнено, Отложено
 
-    private Result result;  // В обработке, Выполнено, Не выполнено
+    @Transient
+    @Column(name = "result")
+    private Result result() {
+        return status.equals(Status.COMPLETED) || status.equals(Status.REJECTED) ?
+                Result.DONE :
+                Result.INPROGRESS;
+    }
+
+    ;  // В обработке, Завершено
 
     private String reason;  // Причина
 
@@ -57,8 +59,6 @@ public class Maintenance extends BaseEntity {
 //        malfunctions.remove(malfunction);
 //        malfunction.setMaintenance(null);
 //    }
-
-
 
 
 }

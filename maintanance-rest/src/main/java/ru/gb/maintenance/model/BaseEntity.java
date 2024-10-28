@@ -12,29 +12,25 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@MappedSuperclass // позволяет вынести общие поля в родительский класс, но при этом не создавать для него отдельную таблицу
+@MappedSuperclass
+// позволяет вынести общие поля в родительский класс, но при этом не создавать для него отдельную таблицу
 public abstract class BaseEntity implements HasId {
     @Id
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
 
-//    protected String name;
-
     @CreationTimestamp
+    @Column(updatable = false, nullable = false)
     @JsonProperty("created_at")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     protected LocalDateTime createdAt;
 
     @UpdateTimestamp
+    @Column(nullable = false)
     @JsonProperty("modify_at")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     protected LocalDateTime modifyAt;
-
-// TODO проверить заполнение полей автоматически
-//    public BaseEntity() {
-//        this.createdAt = LocalDateTime.now();
-//        this.modifyAt = LocalDateTime.now();
-//    }
 
     @Override
     public String toString() {

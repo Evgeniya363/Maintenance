@@ -1,18 +1,12 @@
 package ru.gb.maintenance.model;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public enum Type {
-    // Назначено, Выполнено, Отложено, Возобоновлено
-    //Scheduled, Completed, Postponed, Resumed
-    SCHEDULED("Назначено", 0),
-    INWORKS("В работе", 1),
-    COMPLETED("Выполнено", 2),
-    REJECTED("Отклонено", 3),
-    POSTPONED("Отложено", 4),
-    RESUMED("Возобоновлено", 5);
-
+    PLANNED("Плановая", 0),
+    UNSCHEDULED("Внеплановая",1);
     private String name;
     private int id;
 

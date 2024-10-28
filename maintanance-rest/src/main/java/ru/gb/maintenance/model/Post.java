@@ -8,6 +8,5 @@ import lombok.EqualsAndHashCode;
 @Data
 @Entity
 @Table(name = "post")
-public class Post extends BaseEntity {
-    private String name;
+public class Post extends SimpleEntity {
 }

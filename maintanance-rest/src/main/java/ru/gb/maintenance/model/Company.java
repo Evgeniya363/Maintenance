@@ -10,6 +10,5 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "company")
-public class Company extends BaseEntity {
-    private String name;
+public class Company extends SimpleEntity {
 }
