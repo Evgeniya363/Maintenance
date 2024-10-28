@@ -10,6 +10,5 @@ import lombok.Setter;
 @Data
 @Entity
 @Table(name = "category")
-public class Category extends BaseEntity {
-    private String name;
+public class Category extends SimpleEntity {
 }

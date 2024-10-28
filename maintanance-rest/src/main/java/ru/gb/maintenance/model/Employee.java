@@ -12,12 +12,12 @@ import lombok.Setter;
 @Table(name = "employee")
 public class Employee extends BaseEntity {
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
     private String patronymic;
 
-    @Column(name = "second_name")
+    @Column(name = "second_name", nullable = false)
     private String secondName;
 
     @ManyToOne

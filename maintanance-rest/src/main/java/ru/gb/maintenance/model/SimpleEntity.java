@@ -1,5 +1,6 @@
 package ru.gb.maintenance.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,6 +10,8 @@ import lombok.Setter;
 //@EqualsAndHashCode(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @Data
+@MappedSuperclass
 public class SimpleEntity extends BaseEntity {
+    @Column(nullable = false)
     protected String name;
 }

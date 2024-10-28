@@ -12,9 +12,7 @@ import lombok.Setter;
 @Data
 @Entity
 @Table(name = "department")
-public class Department extends BaseEntity {
-
-    private String name;
+public class Department extends SimpleEntity {
 
     @ManyToOne
     @JoinColumn(name = "company_id")

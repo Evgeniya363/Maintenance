@@ -1,10 +1,10 @@
 package ru.gb.maintenance.services;
 
 import jakarta.transaction.Transactional;
+import org.hibernate.exception.DataException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.gb.maintenance.model.Equipment;
-import ru.gb.maintenance.model.Maintenance;
+import ru.gb.maintenance.model.*;
 import ru.gb.maintenance.model.dtos.MaintenanceDto;
 import ru.gb.maintenance.model.maps.MaintenanceMapper;
 import ru.gb.maintenance.repositories.EquipmentRepository;
@@ -22,7 +22,7 @@ public class MaintenanceServiceImpl extends BaseEntityServiceImpl<Maintenance, M
     @Autowired
     EquipmentRepository equipmentRepository;
 
-//    @Autowired
+    //    @Autowired
 //    MalfunctionService malfunctionService;
     public MaintenanceServiceImpl(MaintenanceRepository maintenanceRepository, MaintenanceMapper mapper, MaintenanceRepository repository) {
         super(maintenanceRepository, mapper);
@@ -38,28 +38,19 @@ public class MaintenanceServiceImpl extends BaseEntityServiceImpl<Maintenance, M
     @Transactional
     public MaintenanceDto save(MaintenanceDto dto) {
 
-        Maintenance maintenance = repository.save(mapper.toEntity(dto));
-        Equipment equipment = maintenance.getEquipment();
-        Long equipmentId = equipment.getId();
-        LocalDate equipmentDate = equipment.getMaintenanceDate();
-        LocalDate date = maintenance.getDate();
+        dto.setStatus(Status.SCHEDULED);
+        if (dto.getType() == null)
+            dto.setType(Type.PLANNED);
 
-        if(equipmentDate==null || date.isAfter(equipmentDate)) {
-//            equipmentRepository.setMaintenanceDate(equipmentId, date);
-            equipment.setMaintenanceDate(date);
-            equipmentRepository.save(equipment);
-        }
+        Maintenance entity = mapper.toEntity(dto);
+        Maintenance maintenance = repository.save(entity);
+
+        maintenance.getEquipment().setMaintenanceDate(
+                dto.getDate() == null ? LocalDate.now() : dto.getDate()
+        );
         return mapper.toDto(maintenance);
 
     }
-
-//    private void updateMaintenanceDate(Long id, Long equipment_id, LocalDate date, LocalDate maintenance_date) {
-//        if (maintenance_date == null || date.isAfter(maintenance_date))
-//            equipmentRepository.setMaintenanceDate(equipment_id, date);
-//        else
-//            equipmentRepository.setMaintenanceDate(equipment_id);
-//
-//    }
 
     @Override
     @Transactional
@@ -67,35 +58,64 @@ public class MaintenanceServiceImpl extends BaseEntityServiceImpl<Maintenance, M
 
         Maintenance maintenance = repository.findById(id).orElseThrow();
         Equipment equipment = maintenance.getEquipment();
+        Long equipmentId = equipment.getId();
 
-        boolean isLastMaintenance = equipment.getMaintenanceDate() != null
+        boolean isLastMaintenance =
+                equipment.getMaintenanceDate() != null
                         && maintenance.getDate().equals(equipment.getMaintenanceDate());
 
-
-        super.deleteById(id);
         if (isLastMaintenance) {
             // В equipment j ТО, обновляем дату в таблице equipment
-            equipment.setMaintenanceDate(repository.getLastDateMaintenance(equipment.getId()).orElse(null));
+            LocalDate date = repository.getOtherLastDateMaintenance(equipmentId, id).orElseThrow();
+            equipment.setMaintenanceDate(date);
             equipmentRepository.save(equipment);
         }
+
+        super.deleteById(id);
+
+
     }
 
     @Override
     @Transactional
     public MaintenanceDto updateById(MaintenanceDto dto, Long id) throws NoSuchElementException {
-        Maintenance oldMaintenance = repository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("MaintenanceID [" + id + "] is missing!"));
 
         dto.setId(id);
+        Maintenance maintenance = repository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("MaintenanceID [" + id + "] is missing!"));
 
-        Equipment oldEquipment = oldMaintenance.getEquipment();
-        if (!dto.getEquipmentId().equals(oldEquipment.getId())
-                || !dto.getDate().equals(oldMaintenance.getDate())) {
+        Equipment oldEquipment = maintenance.getEquipment();
+        if (maintenance.getDate() == null)
+            throw new RuntimeException("The date cannot be empty!");
+
+        if (!dto.getEquipmentId().equals(oldEquipment.getId())) {
             LocalDate date = repository.getOtherLastDateMaintenance(oldEquipment.getId(), id).orElse(null);
             oldEquipment.setMaintenanceDate(date);
+        } else if (dto.getDate().isAfter(maintenance.getDate())) {
+            oldEquipment.setMaintenanceDate(maintenance.getDate());
             equipmentRepository.save(oldEquipment);
         }
-        return save(dto);
 
+        setStatusUpdatedItem(
+                maintenance.getStatus() == null ? Status.SCHEDULED : maintenance.getStatus(),
+                dto.getStatus() == null ? Status.SCHEDULED : dto.getStatus()
+        );
+
+        return super.save(dto);
+
+    }
+
+    private void setStatusUpdatedItem(Status oldStatus, Status newStatus) {
+        if (!newStatus.equals(oldStatus)) {
+            if (
+                    !((newStatus == Status.COMPLETED || newStatus == Status.REJECTED || newStatus == Status.POSTPONED)
+                            && oldStatus == Status.INWORKS
+                            || newStatus == Status.INWORKS && (oldStatus == Status.SCHEDULED || oldStatus == Status.POSTPONED)
+                    )
+            ) {
+                throw new RuntimeException("It is not possible to change the status of the request from " +
+                        oldStatus + " to " + newStatus);
+            }
+        }
     }
 }

@@ -48,12 +48,15 @@ public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends Base
     }
 
     @Override
+
     public void deleteById(Long entityId) {
         repository.deleteById(entityId);
     }
 
     @Override
     public T getObjectById(Long entityId) {
-        return repository.findById(entityId).orElse(null);  // .orElseThrow(() ->  new IllegalArgumentException("Id not found: " + entityId));
+        if (entityId == null)
+            return null;
+        return repository.findById(entityId).orElseThrow(() ->  new IllegalArgumentException("Id not found: " + entityId));
     }
 }
