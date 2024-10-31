@@ -1,17 +1,19 @@
 package ru.gb.maintenance.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import ru.gb.maintenance.model.BaseEntity;
 import ru.gb.maintenance.model.dtos.BaseDto;
 import ru.gb.maintenance.model.maps.BaseMapper;
 import ru.gb.maintenance.repositories.BaseEntityRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
 //@Service
-public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends BaseDto, M extends BaseMapper<T,D>> implements BaseEntityService<T, D>{
+public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends BaseDto, M extends BaseMapper<T, D>> implements BaseEntityService<T, D> {
 
     private final BaseEntityRepository<T> repository;
     protected final M mapper;
@@ -23,40 +25,51 @@ public abstract class BaseEntityServiceImpl<T extends BaseEntity, D extends Base
     }
 
     @Override
-    public D save(D dto) {
-        return mapper.toDto(repository.save(mapper.toEntity(dto)));
+    public T getObjectById(Long entityId) {
+        if (entityId == null) return null;
+        return repository.findById(entityId).orElseThrow(() -> new IllegalArgumentException("Id not found: " + entityId));
     }
 
     @Override
-    public List<D> findAll() {
-        return mapper.toDtoS(repository.findAll());
+    @Transactional
+    public T save(D dto) {
+        return repository.save(mapper.toEntity(dto));
     }
 
     @Override
-    public Optional<D> findById(Long entityId) {
-        return repository.findById(entityId).map(mapper::toDto);
+    public List<T> findAll() {
+        return repository.findAll();
     }
 
-    public D updateById(D dto, Long id) throws NoSuchElementException {
+    @Override
+    public Optional<T> findById(Long entityId) {
+        return repository.findById(entityId);
+    }
+
+    @Override
+    @Transactional
+    public T updateById(D dto, Long id) throws NoSuchElementException {
 
         repository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("ID [" + id + "] is missing!"));
         dto.setId(id);
 
-        return mapper.toDto(repository.save(mapper.toEntity(dto)));
+        return repository.save(mapper.toEntity(dto));
 
     }
 
     @Override
-
     public void deleteById(Long entityId) {
         repository.deleteById(entityId);
     }
 
     @Override
-    public T getObjectById(Long entityId) {
-        if (entityId == null)
-            return null;
-        return repository.findById(entityId).orElseThrow(() ->  new IllegalArgumentException("Id not found: " + entityId));
+    public D toDto(T t) {
+        return mapper.toDto(t);
+    }
+
+    @Override
+    public List<D> toDtoList(List<T> tList) {
+        return tList.stream().map(mapper::toDto).toList();
     }
 }

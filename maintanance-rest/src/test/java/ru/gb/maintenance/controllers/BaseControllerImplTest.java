@@ -1,5 +1,6 @@
 package ru.gb.maintenance.controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,8 @@ import ru.gb.maintenance.model.BaseEntity;
 import ru.gb.maintenance.model.dtos.BaseDto;
 import ru.gb.maintenance.model.maps.BaseMapper;
 import ru.gb.maintenance.repositories.BaseEntityRepository;
-import ru.gb.maintenance.testService.BaseTestDataCreator;
-import ru.gb.maintenance.testService.PojoToJsonConvertor;
+import ru.gb.maintenance.testService.BaseCreatorTest;
+import ru.gb.maintenance.testService.PojoToJsonConvertorTest;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -23,9 +24,19 @@ import static org.junit.jupiter.api.Assertions.*;
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
-abstract class BaseControllerImplTest<T extends BaseEntity, D extends BaseDto, M extends BaseMapper<T,D>, C extends  BaseTestDataCreator<T, D, M>> {
+@RequiredArgsConstructor
+abstract class BaseControllerImplTest<
+        T extends BaseEntity,
+        D extends BaseDto,
+        M extends BaseMapper<T,D>,
+        C extends BaseCreatorTest<T, D, M>>
+{
 
-    protected String uri = "/companies";
+    protected String uri;
+
+    public BaseControllerImplTest(String uri) {
+        this.uri = uri;
+    }
 
     @Autowired
     protected WebTestClient webTestClient;
@@ -38,7 +49,7 @@ abstract class BaseControllerImplTest<T extends BaseEntity, D extends BaseDto, M
     protected C creator;
 
     @Autowired
-    protected PojoToJsonConvertor<D> convertor;
+    protected PojoToJsonConvertorTest<D> convertor;
 
     @BeforeEach
     void beforeEachAction() {
@@ -50,7 +61,7 @@ abstract class BaseControllerImplTest<T extends BaseEntity, D extends BaseDto, M
     }
 
     @Test
-    void testGetByIdAllOk() {
+    void testGetByIOk() {
         // given
         T t = creator.create();
         D expected = creator.createDto(t);
@@ -65,7 +76,6 @@ abstract class BaseControllerImplTest<T extends BaseEntity, D extends BaseDto, M
                 .expectStatus().isOk()
                 .expectBody(String.class)
                 .isEqualTo(convertor.PojoToJson(expected));
-
     }
 
     @Test
@@ -91,7 +101,7 @@ abstract class BaseControllerImplTest<T extends BaseEntity, D extends BaseDto, M
                 .expectBody(String.class)
                 .isEqualTo(convertor.PojoListToJson(expected));
 
-        // TODO Не удалять!!!
+        //Не удалять!!!
 //        webTestClient.get()
 //                .uri(uri)
 //                .exchange()

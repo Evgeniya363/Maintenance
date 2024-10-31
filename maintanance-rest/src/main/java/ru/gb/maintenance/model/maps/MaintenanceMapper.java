@@ -11,7 +11,7 @@ import ru.gb.maintenance.services.*;
 @Mapper(config = MappingConfiguration.class
         , uses = {EquipmentServiceImpl.class, EmployeeServiceImpl.class}
         , unmappedTargetPolicy = ReportingPolicy.IGNORE
-        )
+)
 public interface MaintenanceMapper extends BaseMapper<Maintenance, MaintenanceDto> {
     @Mapping(source = "equipment.id", target = "equipmentId")
     @Mapping(source = "contractor.id", target = "contractorId")

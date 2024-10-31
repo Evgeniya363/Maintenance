@@ -3,40 +3,44 @@ package ru.gb.maintenance.services;
 import jakarta.transaction.Transactional;
 import org.hibernate.exception.DataException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import ru.gb.maintenance.model.*;
+import ru.gb.maintenance.model.dtos.EquipmentDto;
 import ru.gb.maintenance.model.dtos.MaintenanceDto;
 import ru.gb.maintenance.model.maps.MaintenanceMapper;
 import ru.gb.maintenance.repositories.EquipmentRepository;
 import ru.gb.maintenance.repositories.MaintenanceRepository;
+import ru.gb.maintenance.repositories.criteria.EquipmentCriteria;
+import ru.gb.maintenance.repositories.criteria.MaintenanceCriteria;
+import ru.gb.maintenance.repositories.specifications.MaintenanceSpecification;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
 public class MaintenanceServiceImpl extends BaseEntityServiceImpl<Maintenance, MaintenanceDto, MaintenanceMapper> implements MaintenanceService {
     private final MaintenanceRepository repository;
-
     @Autowired
     EquipmentRepository equipmentRepository;
-
-    //    @Autowired
-//    MalfunctionService malfunctionService;
+    @Autowired
+    MaintenanceSpecification specification;
     public MaintenanceServiceImpl(MaintenanceRepository maintenanceRepository, MaintenanceMapper mapper, MaintenanceRepository repository) {
         super(maintenanceRepository, mapper);
         this.repository = maintenanceRepository;
     }
 
-    public Optional<MaintenanceDto> findById(Long id) {
-        return Optional.of(mapper.toDto(repository.findById(id).orElseThrow()));
+    public Optional<Maintenance> findById(Long id) {
+        return Optional.of(repository.findById(id).orElseThrow());
     }
 
 
     @Override
     @Transactional
-    public MaintenanceDto save(MaintenanceDto dto) {
+    public Maintenance save(MaintenanceDto dto) {
 
         dto.setStatus(Status.SCHEDULED);
         if (dto.getType() == null)
@@ -48,7 +52,7 @@ public class MaintenanceServiceImpl extends BaseEntityServiceImpl<Maintenance, M
         maintenance.getEquipment().setMaintenanceDate(
                 dto.getDate() == null ? LocalDate.now() : dto.getDate()
         );
-        return mapper.toDto(maintenance);
+        return maintenance;
 
     }
 
@@ -78,7 +82,7 @@ public class MaintenanceServiceImpl extends BaseEntityServiceImpl<Maintenance, M
 
     @Override
     @Transactional
-    public MaintenanceDto updateById(MaintenanceDto dto, Long id) throws NoSuchElementException {
+    public Maintenance updateById(MaintenanceDto dto, Long id) throws NoSuchElementException {
 
         dto.setId(id);
         Maintenance maintenance = repository.findById(id)
@@ -117,5 +121,11 @@ public class MaintenanceServiceImpl extends BaseEntityServiceImpl<Maintenance, M
                         oldStatus + " to " + newStatus);
             }
         }
+    }
+
+    @Override
+    public List<Maintenance> findByCriteria(MaintenanceCriteria params) {
+        Specification<Maintenance> spec = specification.build(params);
+        return repository.findAll(spec);
     }
 }

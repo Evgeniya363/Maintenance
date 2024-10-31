@@ -21,6 +21,6 @@ public class ModelServiceImpl extends BaseEntityServiceImpl<Model, ModelDto, Mod
     @GetMapping
     @Override
     public List<ModelDto> findByManufacturerId(Long id) {
-        return mapper.toDtoS(repository.findByManufacturerId(id));
+        return mapper.toDtoList(repository.findByManufacturerId(id));
     }
 }

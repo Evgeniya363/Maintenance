@@ -3,7 +3,7 @@ package ru.gb.maintenance.services;
 import org.springframework.stereotype.Service;
 import ru.gb.maintenance.model.Equipment;
 import ru.gb.maintenance.model.dtos.EquipmentDto;
-import ru.gb.maintenance.model.criteria.EquipmentCriteria;
+import ru.gb.maintenance.repositories.criteria.EquipmentCriteria;
 
 import java.util.List;
 

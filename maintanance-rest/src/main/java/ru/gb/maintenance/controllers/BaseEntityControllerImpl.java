@@ -5,24 +5,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.gb.maintenance.model.BaseEntity;
+import ru.gb.maintenance.model.dtos.BaseDto;
 import ru.gb.maintenance.services.BaseEntityService;
 
 import java.util.List;
 
 @RequiredArgsConstructor
-public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implements BaseEntityController<T, D> {
+public abstract class BaseEntityControllerImpl<T extends BaseEntity, D extends BaseDto> implements BaseEntityController<T, D> {
 
     protected final BaseEntityService<T, D> service;
 
     @GetMapping
     public ResponseEntity<List<D>> findAll() {
-        return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
+        return ResponseEntity.status(HttpStatus.OK).body(service.toDtoList(service.findAll()));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<D> findById(@PathVariable Long id) {
         return service.findById(id)
-                .map(post -> ResponseEntity.status(HttpStatus.OK).body(post))
+                .map(post -> ResponseEntity.status(HttpStatus.OK).body(service.toDto(post)))
                 .orElseGet(() -> ResponseEntity.notFound().build());
 
     }
@@ -30,7 +31,7 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
     @PostMapping
     public ResponseEntity<D> create(@RequestBody D object) {
 
-        object = service.save(object);
+        object = service.toDto(service.save(object));
         if (object == null) {
             return ResponseEntity.notFound().build();
         }
@@ -47,7 +48,7 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D> implemen
     @PutMapping("/{id}")
     public ResponseEntity<D> update(@PathVariable Long id, @RequestBody D dto) {
 
-        dto = service.updateById(dto, id);
+        dto = service.toDto(service.updateById(dto, id));
         if (dto == null) {
             return ResponseEntity.notFound().build();
         }

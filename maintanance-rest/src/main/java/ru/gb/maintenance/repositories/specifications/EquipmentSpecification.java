@@ -1,9 +1,11 @@
-package ru.gb.maintenance.repositories;
+package ru.gb.maintenance.repositories.specifications;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import ru.gb.maintenance.model.Equipment;
-import ru.gb.maintenance.model.criteria.EquipmentCriteria;
+import ru.gb.maintenance.repositories.criteria.EquipmentCriteria;
+
+import java.time.LocalDate;
 
 @Component
 public class EquipmentSpecification {
@@ -15,6 +17,8 @@ public class EquipmentSpecification {
                 .and(withEmployeeId(params.getEmployeeId()))
                 .and(withModelId(params.getModelId()))
                 .and(withManufacturerId(params.getManufacturerId()))
+                .and(isDateGreaterThan(params.getBeginDate()))
+                .and(isDateLessThan(params.getEndDate()))
                 ;
     }
 
@@ -52,6 +56,18 @@ public class EquipmentSpecification {
         return (root, query, criteriaBuilder) -> manufacturerId == null
                 ? criteriaBuilder.conjunction()
                 : criteriaBuilder.equal(root.get("model").get("manufacturer").get("id"), manufacturerId);
+    }
+
+    private Specification<Equipment> isDateLessThan(LocalDate date) {
+        return (root, query, criteriaBuilder) -> date == null
+                ? criteriaBuilder.conjunction()
+                : criteriaBuilder.lessThan(root.get("maintenance_date"), date);
+    }
+
+    private Specification<Equipment> isDateGreaterThan(LocalDate date) {
+        return (root, query, criteriaBuilder) -> date == null
+                ? criteriaBuilder.conjunction()
+                : criteriaBuilder.greaterThan(root.get("maintenance_date"), date);
     }
 
 //    public static Specification<Equipment> isDepartment(Long departmentId) {
