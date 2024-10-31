@@ -10,8 +10,7 @@ import ru.gb.maintenance.model.dtos.HasId;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @MappedSuperclass
 // позволяет вынести общие поля в родительский класс, но при этом не создавать для него отдельную таблицу
 public abstract class BaseEntity implements HasId {

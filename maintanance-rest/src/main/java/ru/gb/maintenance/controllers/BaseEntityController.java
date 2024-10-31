@@ -3,11 +3,12 @@ package ru.gb.maintenance.controllers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import ru.gb.maintenance.model.BaseEntity;
+import ru.gb.maintenance.model.dtos.BaseDto;
 
 import java.util.List;
 
 @Service
-public interface BaseEntityController<T extends BaseEntity, D> {
+public interface BaseEntityController<T extends BaseEntity, D extends BaseDto> {
 
     public ResponseEntity<List<D>> findAll();
 

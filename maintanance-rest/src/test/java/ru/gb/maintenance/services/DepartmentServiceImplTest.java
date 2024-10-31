@@ -1,27 +1,30 @@
 package ru.gb.maintenance.services;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import ru.gb.maintenance.model.Department;
+import ru.gb.maintenance.repositories.DepartmentRepository;
+import ru.gb.maintenance.testService.DepartmentCreatorTest;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @ActiveProfiles("test")
 @SpringBootTest
 class DepartmentServiceImplTest {
-/*
+
     @Autowired
-    DatabaseUtil databaseUtil;
+    DepartmentCreatorTest departmentCreator;
 
     @Autowired
     DepartmentRepository departmentRepository;
 
     @Autowired
-    CompanyRepository companyRepository;
-
-    @Autowired
-    DepartmentServiceImpl departmentService;
-
-    @Autowired
-    CompanyServiceImpl companyService;
-
+    DepartmentService departmentService;
 
     @Test
     void findByIdEmpty() {
@@ -34,20 +37,15 @@ class DepartmentServiceImplTest {
     @Test
     void findByIdPresent() {
         // given
-        Company expectedCompany = databaseUtil.createCompany();
-        Department expectedDepartment = databaseUtil.createDepartment();
+        Department expected = departmentCreator.create();
 
         // when
-        Optional<DepartmentDto> actualDepartment = departmentService.findById(expectedDepartment.getId());
+        Optional<Department> actual = departmentService.findById(expected.getId());
 
         // then
-        assertTrue(actualDepartment.isPresent());
-        assertEquals(actualDepartment.get().getId(), expectedDepartment.getId());
-        assertEquals(actualDepartment.get().getName(), expectedDepartment.getName());
-        assertEquals(actualDepartment.get().getCompanyId(), expectedCompany.getId());
-        assertEquals(actualDepartment.get().getCompanyName(), expectedCompany.getName());
+        assertTrue(actual.isPresent());
+        assertEquals(actual.get(), expected);
 
     }
 
-*/
 }

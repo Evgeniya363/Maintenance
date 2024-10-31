@@ -21,7 +21,7 @@ public class EmployeeServiceImpl extends BaseEntityServiceImpl<Employee, Employe
     @GetMapping
     @Override
     public List<EmployeeDto> findByPostId(Long id) {
-        return mapper.toDtoS(repository.findByPostId(id));
+        return mapper.toDtoList(repository.findByPostId(id));
     }
 
     @Override

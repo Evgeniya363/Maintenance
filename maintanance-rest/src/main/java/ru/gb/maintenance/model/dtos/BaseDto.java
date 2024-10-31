@@ -5,11 +5,10 @@ import jakarta.persistence.GenerationType;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import ru.gb.maintenance.model.criteria.Requestable;
+import ru.gb.maintenance.repositories.criteria.Requestable;
 
-@Getter
-@Setter
-public abstract class BaseDto implements HasId, Requestable {
+@Data
+public abstract class BaseDto implements HasId {
 //    @GeneratedValue(strategy= GenerationType.IDENTITY)
     protected Long id;
 };

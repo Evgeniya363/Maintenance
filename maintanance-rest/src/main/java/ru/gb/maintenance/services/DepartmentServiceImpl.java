@@ -21,6 +21,6 @@ public class DepartmentServiceImpl extends BaseEntityServiceImpl<Department, Dep
     @GetMapping
     @Override
     public List<DepartmentDto> findByCompanyId(Long id) {
-        return mapper.toDtoS(repository.findByCompanyId(id));
+        return mapper.toDtoList(repository.findByCompanyId(id));
     }
 }

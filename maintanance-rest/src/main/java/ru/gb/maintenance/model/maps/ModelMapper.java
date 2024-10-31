@@ -12,7 +12,7 @@ public interface ModelMapper extends BaseMapper<Model, ModelDto> {
     @Mapping(source = "manufacturer.id", target = "manufacturerId")
     ModelDto toDto(Model model);
 
-    @Mapping(source = "manufacturerId", target = "manufacturer")
+    //    @Mapping(source = "manufacturerId", target = "manufacturer")
     Model toEntity(ModelDto dto);
 
 }

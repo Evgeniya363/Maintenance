@@ -6,14 +6,14 @@ import org.springframework.test.context.ActiveProfiles;
 import ru.gb.maintenance.model.Company;
 import ru.gb.maintenance.model.dtos.CompanyDto;
 import ru.gb.maintenance.model.maps.CompanyMapper;
-import ru.gb.maintenance.testService.BaseTestDataCreator;
-import ru.gb.maintenance.testService.CompanyTestDataCreator;
+import ru.gb.maintenance.testService.BaseCreatorTest;
+import ru.gb.maintenance.testService.CompanyCreatorTest;
 
 @ActiveProfiles("test")
 @SpringBootTest
-public class CompanyControllerImplTest extends BaseControllerImplTest<Company, CompanyDto, CompanyMapper, BaseTestDataCreator<Company, CompanyDto, CompanyMapper>>{
+public class CompanyControllerImplTest extends BaseControllerImplTest<Company, CompanyDto, CompanyMapper, BaseCreatorTest<Company, CompanyDto, CompanyMapper>>{
     @Autowired
-     CompanyTestDataCreator creator;
+    CompanyCreatorTest creator;
 
     public CompanyControllerImplTest() {
         uri = "/companies";

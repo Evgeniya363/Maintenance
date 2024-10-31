@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.gb.maintenance.model.Equipment;
 import ru.gb.maintenance.model.dtos.EquipmentDto;
-import ru.gb.maintenance.model.criteria.EquipmentCriteria;
+import ru.gb.maintenance.repositories.criteria.EquipmentCriteria;
 import ru.gb.maintenance.services.EquipmentService;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/equipments")
 public class EquipmentControllerImpl extends  BaseEntityControllerImpl<Equipment, EquipmentDto> { // implements BaseQueryController<EquipmentDto, EquipmentParameters>{
 
-    final EquipmentService equipmentService;
+    private final EquipmentService equipmentService;
 
     public EquipmentControllerImpl(EquipmentService service, EquipmentService equipmentService) {
         super(service);
@@ -26,7 +26,7 @@ public class EquipmentControllerImpl extends  BaseEntityControllerImpl<Equipment
 //        return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByCriteria(criteria));
 //    }
 
-//    @Override
+    //    @Override
     @GetMapping("/search")
     public ResponseEntity<List<EquipmentDto>> findByCriteria(@RequestBody EquipmentCriteria parameters) {
         return ResponseEntity.status(HttpStatus.OK).body(equipmentService.findByCriteria(parameters));

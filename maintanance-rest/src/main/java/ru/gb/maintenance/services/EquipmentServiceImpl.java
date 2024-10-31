@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import ru.gb.maintenance.model.Equipment;
 import ru.gb.maintenance.model.dtos.EquipmentDto;
 import ru.gb.maintenance.model.maps.EquipmentMapper;
-import ru.gb.maintenance.model.criteria.EquipmentCriteria;
+import ru.gb.maintenance.repositories.criteria.EquipmentCriteria;
 import ru.gb.maintenance.repositories.EquipmentRepository;
-import ru.gb.maintenance.repositories.EquipmentSpecification;
+import ru.gb.maintenance.repositories.specifications.EquipmentSpecification;
 
 import java.util.List;
 
@@ -30,43 +30,39 @@ public class EquipmentServiceImpl extends BaseEntityServiceImpl<Equipment, Equip
     @GetMapping
     @Override
     public List<EquipmentDto> findByCategoryId(Long id) {
-        return mapper.toDtoS(repository.findByCategoryId(id));
+        return mapper.toDtoList(repository.findByCategoryId(id));
     }
 
     @GetMapping
     @Override
     public List<EquipmentDto> findByEmployeeId(Long id) {
-        return mapper.toDtoS(repository.findByEmployeeId(id));
+        return mapper.toDtoList(repository.findByEmployeeId(id));
     }
 
     @Override
     public List<EquipmentDto> findByDepartmentId(Long id) {
-        return mapper.toDtoS(repository.findByDepartmentId(id));
+        return mapper.toDtoList(repository.findByDepartmentId(id));
     }
 
     @Override
     public List<EquipmentDto> findByModelId(Long id) {
-        return mapper.toDtoS(repository.findByModelId(id));
+        return mapper.toDtoList(repository.findByModelId(id));
     }
 
     @Override
     public List<EquipmentDto> findByCompanyId(Long id) {
-        return mapper.toDtoS(repository.findByCompanyId(id));
+        return mapper.toDtoList(repository.findByCompanyId(id));
     }
 
     @Override
     public List<EquipmentDto> findByManufacturerId(Long id) {
-        return mapper.toDtoS(repository.findByManufacturerId(id));
+        return mapper.toDtoList(repository.findByManufacturerId(id));
     }
 
     @Override
-    public List<EquipmentDto> findByCriteria(EquipmentCriteria params) { //Long companyId, Long departmentId, Long manufacturerId, Long modelId, Long categoryId, Long employeeId) {
-
+    public List<EquipmentDto> findByCriteria(EquipmentCriteria params) {
         Specification<Equipment> spec = specification.build(params);
         return repository.findAll(spec).stream().map(mapper::toDto).toList();
-
     }
 
-    // List<Customer> customers = customerRepository.findAll(
-    //        where(isLongTermCustomer()).or(hasSalesOfMoreThan(amount)));
 }
