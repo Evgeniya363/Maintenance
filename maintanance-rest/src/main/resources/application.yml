@@ -17,5 +17,3 @@ spring:
       ddl-auto: update
   jackson:
     default-property-inclusion: non_null  # Скрывает null значения в Json
-
-
