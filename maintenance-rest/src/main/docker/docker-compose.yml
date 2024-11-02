@@ -1,0 +1,45 @@
+version: '2.2'
+services:
+  db:
+    container_name: pgdb
+    image: 'postgres:16.1-alpine'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db
+    ports:
+      - "5432:5432"
+
+    restart: unless-stopped
+
+  app:
+    container_name: app
+    image: 'docker-spring-boot-postgres:latest'
+#    volumes:
+#      - ./pgdata:/var/lib/postgresql/data
+#    volumes:
+#      - type: bind
+#        source: ./DirectoryIWantToMountInDockerContainer
+#        target: /path/where/mount/source
+#        volume:
+#          nocopy: true  # flag to disable copying of data from a container when a volume is created
+    build:
+      context: .
+      dockerfile: Dockerfile
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES=db
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql:/db:5432/db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+
+#volumes:
+#  mntrest: {}
+
+    

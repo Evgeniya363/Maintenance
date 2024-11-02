@@ -14,7 +14,7 @@
 	<packaging>pom</packaging>
 	<name>maintenance</name>
 	<modules>
-		<module>maintanance-rest</module>
+		<module>maintenance-rest</module>
 	</modules>
 
 	<properties>
@@ -26,6 +26,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.2.12-SNAPSHOT</version>
 				<configuration>
 					<excludes>
 						<exclude>
@@ -35,6 +36,17 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<version>3.13.0</version>-->
+<!--				<configuration>-->
+<!--					<source>21</source>-->
+<!--					<target>21</target>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+
 		</plugins>
 	</build>
 
