@@ -22,4 +22,9 @@ public class MalfunctionServiceImpl extends BaseEntityServiceImpl<Malfunction, M
     public List<MalfunctionDto> findByMaintenanceId(Long id) {
         return mapper.toDtoList(malfunctionRepository.findByMaintenanceId(id));
     }
+
+    @Override
+    public void deleteByMaintenanceId(Long id) {
+        malfunctionRepository.deleteByMaintenanceId(id);
+    }
 }

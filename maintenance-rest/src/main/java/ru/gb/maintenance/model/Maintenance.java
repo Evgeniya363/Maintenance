@@ -15,13 +15,13 @@ public class Maintenance extends BaseEntity {
     @Column(nullable = false)
     private LocalDate date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "equipment_id")
     private Equipment equipment;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "contractor_id")
-    private Employee contractor;  // Подрядчик
+    private Contractor contractor;  // Подрядчик
 
     private Type type;  // Плановая, внеплановая
 

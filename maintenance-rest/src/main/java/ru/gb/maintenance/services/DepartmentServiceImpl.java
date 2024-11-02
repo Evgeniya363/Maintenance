@@ -13,7 +13,7 @@ import java.util.List;
 public class DepartmentServiceImpl extends BaseEntityServiceImpl<Department, DepartmentDto, DepartmentMapper> implements DepartmentService{
     private final DepartmentRepository repository;
 
-    public DepartmentServiceImpl(DepartmentRepository departmentRepository, DepartmentMapper mapper, DepartmentRepository repository) {
+    public DepartmentServiceImpl(DepartmentRepository departmentRepository, DepartmentMapper mapper) {
         super(departmentRepository, mapper);
         this.repository = departmentRepository;
     }

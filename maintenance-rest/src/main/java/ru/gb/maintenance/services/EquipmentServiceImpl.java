@@ -60,9 +60,9 @@ public class EquipmentServiceImpl extends BaseEntityServiceImpl<Equipment, Equip
     }
 
     @Override
-    public List<EquipmentDto> findByCriteria(EquipmentCriteria params) {
+    public List<Equipment> findByCriteria(EquipmentCriteria params) {
         Specification<Equipment> spec = specification.build(params);
-        return repository.findAll(spec).stream().map(mapper::toDto).toList();
+        return repository.findAll(spec);
     }
 
 }

@@ -15,9 +15,11 @@ public class MaintenanceSpecification {
                 .and(withDepartmentId(params.getDepartmentId()))
                 .and(withCompanyId(params.getCompanyId()))
                 .and(withEmployeeId(params.getEmployeeId()))
+                .and(withContractorId(params.getContractorId()))
                 .and(withModelId(params.getModelId()))
                 .and(withManufacturerId(params.getManufacturerId()))
                 .and(withContractorId(params.getContractorId()))
+                .and(withEquipmentId(params.getEquipmentId()))
                 .and(isDateGreaterThan(params.getBeginDate()))
                 .and(isDateLessThan(params.getEndDate()))
                 ;
@@ -64,6 +66,12 @@ public class MaintenanceSpecification {
                 : criteriaBuilder.equal(root.get("contractor").get("id"), contractorId);
     }
 
+    private Specification<Maintenance> withEquipmentId(Long equipmentId) {
+        return (root, query, criteriaBuilder) -> equipmentId == null
+                ? criteriaBuilder.conjunction()
+                : criteriaBuilder.equal(root.get("equipment").get("id"), equipmentId);
+    }
+
     private Specification<Maintenance> isDateLessThan(LocalDate date) {
         return (root, query, criteriaBuilder) -> date == null
                 ? criteriaBuilder.conjunction()
@@ -77,28 +85,3 @@ public class MaintenanceSpecification {
     }
 
 }
-
-/* Example
-public class CustomerSpecs {
-    public static Specification<Customer> isLongTermCustomer() {
-        return new Specification<Customer>() {
-            public Predicate toPredicate(
-                Root<Customer> root, CriteriaQuery<?> query,
-                CriteriaBuilder builder) {
-                LocalDate date = new LocalDate().minusYears(2);
-                return builder.lessThan(root.get('dateField'), date);
-            }
-        };
-    }
-
-    public static Specification<Customer> hasSalesOfMoreThan(MontaryAmount value) {
-        return new Specification<Customer>() {
-            public Predicate toPredicate(
-                Root<T> root, CriteriaQuery<?> query,
-                CriteriaBuilder builder) {
-                // build query here
-            }
-        };
-    }
-}
- */

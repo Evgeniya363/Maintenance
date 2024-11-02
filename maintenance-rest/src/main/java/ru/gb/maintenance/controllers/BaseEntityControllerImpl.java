@@ -35,6 +35,7 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D extends B
         if (object == null) {
             return ResponseEntity.notFound().build();
         }
+//        object = toDoBeforeSaving(object);
         return ResponseEntity.status(HttpStatus.CREATED).body(object);
     }
 
@@ -54,6 +55,10 @@ public abstract class BaseEntityControllerImpl<T extends BaseEntity, D extends B
         }
         return ResponseEntity.status(HttpStatus.OK).body(dto);
 
-
     }
+
+//    @Override
+//    public D toDoBeforeSaving(D d) {
+//        return d;
+//    }
 }

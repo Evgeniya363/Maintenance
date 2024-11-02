@@ -1,5 +1,6 @@
 package ru.gb.maintenance.model.dtos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -34,9 +35,11 @@ public class EquipmentDto extends BaseDto{
     @JsonProperty("service_number")
     private String serviceNumber;
 
+    @JsonFormat(pattern="dd.MM.yyyy")
     @JsonProperty("start_usage_date")
     private LocalDate startUsageDate;
 
+    @JsonFormat(pattern="dd.MM.yyyy")
     @JsonProperty("maintenance_date")
     private LocalDate maintenanceDate;
 }

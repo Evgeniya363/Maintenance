@@ -22,6 +22,6 @@ public interface EquipmentService extends BaseEntityService<Equipment, Equipment
     List<EquipmentDto> findByManufacturerId(Long id);
 
 //    List<EquipmentDto> findByCriteria(Long companyId, Long departmentId, Long manufacturerId, Long modelId, Long categoryId, Long employeeId);
-    List<EquipmentDto> findByCriteria(EquipmentCriteria parameters);
+    List<Equipment> findByCriteria(EquipmentCriteria parameters);
 
 }
