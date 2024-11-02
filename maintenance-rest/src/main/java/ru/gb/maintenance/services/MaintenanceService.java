@@ -1,6 +1,5 @@
 package ru.gb.maintenance.services;
 
-import org.springframework.stereotype.Service;
 import ru.gb.maintenance.model.Maintenance;
 import ru.gb.maintenance.model.dtos.MaintenanceDto;
 import ru.gb.maintenance.repositories.criteria.MaintenanceCriteria;

@@ -61,13 +61,13 @@ public class EquipmentSpecification {
     private Specification<Equipment> isDateLessThan(LocalDate date) {
         return (root, query, criteriaBuilder) -> date == null
                 ? criteriaBuilder.conjunction()
-                : criteriaBuilder.lessThan(root.get("maintenance_date"), date);
+                : criteriaBuilder.lessThan(root.get("maintenanceDate"), date);
     }
 
     private Specification<Equipment> isDateGreaterThan(LocalDate date) {
         return (root, query, criteriaBuilder) -> date == null
                 ? criteriaBuilder.conjunction()
-                : criteriaBuilder.greaterThan(root.get("maintenance_date"), date);
+                : criteriaBuilder.greaterThan(root.get("maintenanceDate"), date);
     }
 
 //    public static Specification<Equipment> isDepartment(Long departmentId) {

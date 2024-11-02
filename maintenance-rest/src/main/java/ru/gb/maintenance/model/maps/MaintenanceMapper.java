@@ -9,7 +9,7 @@ import ru.gb.maintenance.services.*;
 
 
 @Mapper(config = MappingConfiguration.class
-        , uses = {EquipmentServiceImpl.class, EmployeeServiceImpl.class}
+        , uses = {EquipmentServiceImpl.class, ContractorServiceImpl.class}
         , unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public interface MaintenanceMapper extends BaseMapper<Maintenance, MaintenanceDto> {

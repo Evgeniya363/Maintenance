@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface MalfunctionRepository extends BaseEntityRepository<Malfunction> {  //, JpaSpecificationExecutor<Malfunction> {
     List<Malfunction> findByMaintenanceId(Long id);
-
+    void deleteByMaintenanceId(Long id);
 }

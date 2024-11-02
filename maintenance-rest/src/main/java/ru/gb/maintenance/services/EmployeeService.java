@@ -8,7 +8,5 @@ import java.util.List;
 public interface EmployeeService extends BaseEntityService<Employee, EmployeeDto> {
     List<EmployeeDto> findByPostId(Long id);
 
-//    Optional<EmployeeDto> findByEquipmentId(Long id);
-
     List<EmployeeDto> findByDepartmentId(Long id);
 }

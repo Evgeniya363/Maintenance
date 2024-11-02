@@ -28,14 +28,14 @@ public class Employee extends BaseEntity {
     @JoinColumn(name = "post_id")
     private Post post;
 
-    @Transient
-    @Column(name = "full_name")
-    private String abbreviatedName() {
-        return getInitial(firstName) + getInitial(patronymic) + secondName;
-    }
-
-    private String getInitial(String name) {
-        return name.isEmpty() ? "" : name.charAt(0) + ". ";
-    }
+//    @Transient
+//    @Column(name = "full_name")
+//    private String abbreviatedName() {
+//        return getInitial(firstName) + getInitial(patronymic) + secondName;
+//    }
+//
+//    private String getInitial(String name) {
+//        return name.isEmpty() ? "" : name.charAt(0) + ". ";
+//    }
 
 }

@@ -12,4 +12,5 @@ import java.util.Optional;
 public interface MalfunctionService extends BaseEntityService<Malfunction, MalfunctionDto> {
     List<MalfunctionDto> findByMaintenanceId(Long id);
 
+    void deleteByMaintenanceId(Long id);
 }

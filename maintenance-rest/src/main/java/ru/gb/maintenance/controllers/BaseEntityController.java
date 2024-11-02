@@ -10,14 +10,16 @@ import java.util.List;
 @Service
 public interface BaseEntityController<T extends BaseEntity, D extends BaseDto> {
 
-    public ResponseEntity<List<D>> findAll();
+    ResponseEntity<List<D>> findAll();
 
-    public ResponseEntity<D> findById(Long id);
+    ResponseEntity<D> findById(Long id);
 
-    public ResponseEntity<D> create(D object);
+    ResponseEntity<D> create(D object);
 
-    public ResponseEntity<Void> delete(Long id);
+    ResponseEntity<Void> delete(Long id);
 
-    public ResponseEntity<D> update(Long id, D object);
+    ResponseEntity<D> update(Long id, D object);
+
+//    D toDoBeforeSaving(D d);
 
 }
