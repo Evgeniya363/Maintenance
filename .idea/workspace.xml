@@ -4,41 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b30d9ac2-ee18-4d8f-82a8-6ad4056d9924" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/BaseEntityControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/EquipmentControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/EquipmentControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/MaintenanceControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/controllers/MaintenanceControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/model/dtos/EquipmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/model/dtos/EquipmentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/MalfunctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/MalfunctionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/criteria/EquipmentCriteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/criteria/EquipmentCriteria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/criteria/MaintenanceCriteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/criteria/MaintenanceCriteria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/specifications/EquipmentSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/specifications/EquipmentSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/specifications/MaintenanceSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/repositories/specifications/MaintenanceSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/EquipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/EquipmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/EquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/EquipmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MalfunctionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MalfunctionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MalfunctionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MalfunctionServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="a1a36397-0057-4516-8aa1-d439f0ad4db1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Record" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,10 +24,9 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2nlBTiorV7Jhy6LtIF9nebXvS3Y" />
+  <component name="ProjectId" id="2oWeH348NcidcIKCykRcJq9RFs6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -67,105 +36,44 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.MaintenanceRestApplication.executor": "Debug",
-    "Application.Unnamed.executor": "Run",
-    "JAR Application.maintenance-rest-0.0.1-SNAPSHOT.jar (1).executor": "Run",
-    "JAR Application.maintenance-rest-0.0.1-SNAPSHOT.jar.executor": "Run",
-    "JUnit.DepartmentServiceImplTest.executor": "Run",
-    "Maven.maintenance [org.apache.maven.plugins:maven-clean-plugin:3.3.2:clean].executor": "Run",
+    "Application.MaintenanceRestApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "my-branch",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/1GB/Blok3/Practic/Maintenance/maintenance-rest/src/main/docker",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "last_opened_file_path": "E:/1GB/Blok3/Practic/Maintenance/maintenance-rest/src/main/java/ru/gb/maintenance/repositories",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "configurable.group.language"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\1GB\Blok3\Practic\Maintenance\maintenance-rest\src\main\docker" />
-      <recent name="E:\1GB\Blok3\Practic\Maintenance\maintenance-rest\src\main\docker\pgdate" />
-      <recent name="E:\1GB\Blok3\Practic\Maintenance\maintanance-rest\src" />
-      <recent name="E:\1GB\Blok3\Practic\Maintenance\maintanance-rest\src\main" />
-      <recent name="E:\1GB\Blok3\Practic\Maintenance" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\1GB\Blok3\Practic\Maintenance\maintenance-rest\src\main\docker" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ru.gb.maintenance.controllers" />
-      <recent name="ru.gb.maintenance.services" />
-      <recent name="ru.gb.maintenance.repositories" />
-      <recent name="ru.gb.maintenance.model.maps" />
-      <recent name="ru.gb.maintenance.model.dtos" />
+      <recent name="E:\1GB\Blok3\Practic\Maintenance\maintenance-rest\src\main\java\ru\gb\maintenance\repositories" />
+      <recent name="E:\1GB\Blok3\Practic\Maintenance\maintenance-rest\src\main\java\ru\gb\maintenance\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MaintenanceRestApplication">
-    <configuration name="MaintenanceRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="21" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ru.gb.maintenance.MaintenanceRestApplication" />
-      <module name="maintenance-rest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.gb.maintenance.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Maintenance" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="maintenance-rest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.gb.maintenance.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="21" />
-      <option name="PACKAGE_NAME" value="ru.gb.maintenance.services" />
-      <option name="MAIN_CLASS_NAME" value="ru.gb.maintenance.services.DepartmentServiceImplTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Maintenance" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="maintenance-rest-0.0.1-SNAPSHOT.jar (1)" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/maintenance-rest/target/maintenance-rest-0.0.1-SNAPSHOT.jar" />
-      <method v="2" />
-    </configuration>
-    <configuration name="maintenance-rest-0.0.1-SNAPSHOT.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/maintenance-rest/src/main/docker/maintenance-rest-0.0.1-SNAPSHOT.jar" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.MaintenanceRestApplication" />
-      <item itemvalue="JAR Application.maintenance-rest-0.0.1-SNAPSHOT.jar" />
-      <item itemvalue="JAR Application.maintenance-rest-0.0.1-SNAPSHOT.jar (1)" />
-      <item itemvalue="JUnit.DepartmentServiceImplTest" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.MaintenanceRestApplication" />
-        <item itemvalue="JAR Application.maintenance-rest-0.0.1-SNAPSHOT.jar (1)" />
-        <item itemvalue="JAR Application.maintenance-rest-0.0.1-SNAPSHOT.jar" />
-        <item itemvalue="JUnit.DepartmentServiceImplTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
         <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
-        <option value="jdk-21.0.2-graalvm-jdk-21.0.2-f644763e9732-f81af680" />
         <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
       </set>
     </attachedChunks>
@@ -173,58 +81,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b30d9ac2-ee18-4d8f-82a8-6ad4056d9924" name="Changes" comment="" />
-      <created>1729537792793</created>
+      <changelist id="a1a36397-0057-4516-8aa1-d439f0ad4db1" name="Changes" comment="" />
+      <created>1730989667368</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729537792793</updated>
+      <updated>1730989667368</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/model/maps/ContractorMapper.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/BaseEntityServiceImpl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/maintenance-rest/src/main/java/ru/gb/maintenance/services/MaintenanceServiceImpl.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

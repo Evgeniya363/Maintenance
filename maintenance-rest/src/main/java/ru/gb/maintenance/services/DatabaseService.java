@@ -209,10 +209,6 @@ public class DatabaseService {
             equipmentRepository.save(equipment1);
         }
 
-
-//        EmployeeRepository employeeRepository = ctx.getBean(EmployeeRepository.class);
-//        EquipmentRepository equipmentRepository = ctx.getBean(EquipmentRepository.class);
-
         List<Equipment> equipmentList = equipmentRepository.findAll();
 
         for (Equipment e : equipmentList) {
@@ -250,6 +246,7 @@ public class DatabaseService {
             maintenanceRepository.save(maintenance);
 
         }
+
     }
 
 }
