@@ -1,22 +1,37 @@
-version: '2.2'
+version: '3'
 services:
   db:
-    container_name: pgdb
-    image: 'postgres:16.1-alpine'
+    build:
+      context: .
+      dockerfile: postgres.Dockerfile
+    image: postgres
+    container_name: ${PG_CONTAINER_NAME}
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=db
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: ${PGDATA}
+    volumes:
+      - dbdata:/data/postgres-data
     ports:
       - "5432:5432"
-
     restart: unless-stopped
+    #container_name: pgdb
+    #image: 'postgres:16.1-alpine'
+    #environment:
+    #  - POSTGRES_USER=postgres
+    #  - POSTGRES_PASSWORD=postgres
+    #  - POSTGRES_DB=db
+    #ports:
+    #  - "5432:5432"
+
+    #restart: unless-stopped
 
   app:
     container_name: app
     image: 'docker-spring-boot-postgres:latest'
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ./dbdata:/var/lib/postgresql/data
     build:
       context: .
       dockerfile: Dockerfile
@@ -27,13 +42,13 @@ services:
     depends_on:
       - db
     environment:
-      - POSTGRES=db
+      - POSTGRES=${PG_CONTAINER_NAME}  #db
 #      - SPRING_DATASOURCE_URL=jdbc:postgresql:/db:5432/db
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
       - SPRING_JPA_HIBERNATE_DDL_AUTO=none
-
 volumes:
-  pgdata: {}
+  dbdata:
+    external: true
 
     

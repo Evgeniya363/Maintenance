@@ -19,7 +19,7 @@ public class MaintenanceRestApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(MaintenanceRestApplication.class, args);
-        DatabaseService.InitDb(ctx);
+        // if (ctx != null) DatabaseService.InitDb(ctx);  // Инициализация таблиц БД
     }
 
 }
