@@ -11,76 +11,78 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class DatabaseService {
     public static void InitDb(ConfigurableApplicationContext ctx) {
-        // Не перемещать, порядок важен!
+
         MaintenanceRepository maintenanceRepository = ctx.getBean(MaintenanceRepository.class);
-        maintenanceRepository.deleteAll();
+        if (maintenanceRepository.count() != 0)  // Данные о ТО имеются
+            return;
+//        maintenanceRepository.deleteAll();
 
         EquipmentRepository equipmentRepository = ctx.getBean(EquipmentRepository.class);
-        equipmentRepository.deleteAll();
+//        equipmentRepository.deleteAll();
 
         ContractorRepository contractorRepository = ctx.getBean(ContractorRepository.class);
-        contractorRepository.deleteAll();
+//        contractorRepository.deleteAll();
 
         EmployeeRepository employeeRepository = ctx.getBean(EmployeeRepository.class);
-        employeeRepository.deleteAll();
+//        employeeRepository.deleteAll();
 
         DepartmentRepository departmentRepository = ctx.getBean(DepartmentRepository.class);
-        departmentRepository.deleteAll();
+//        departmentRepository.deleteAll();
 
         PostRepository postRepository = ctx.getBean(PostRepository.class);
-        postRepository.deleteAll();
+//        postRepository.deleteAll();
 
         CategoryRepository categoryRepository = ctx.getBean(CategoryRepository.class);
-        categoryRepository.deleteAll();
+//        categoryRepository.deleteAll();
 
         CompanyRepository companyRepository = ctx.getBean(CompanyRepository.class);
-        companyRepository.deleteAll();
+//        companyRepository.deleteAll();
 
         ModelRepository modelRepository = ctx.getBean(ModelRepository.class);
-        modelRepository.deleteAll();
+//        modelRepository.deleteAll();
 
         ManufacturerRepository manufacturerRepository = ctx.getBean(ManufacturerRepository.class);
-        manufacturerRepository.deleteAll();
+//        manufacturerRepository.deleteAll();
 
 
         Post post1 = new Post();
-        post1.setName("Бухгалтер");
+        post1.setName("accountant");
         postRepository.save(post1);
 
         Post post2 = new Post();
-        post2.setName("Инженер");
+        post2.setName("engineer");
         postRepository.save(post2);
 
         Post post3 = new Post();
-        post3.setName("Техник");
+        post3.setName("technician");
         postRepository.save(post3);
 
 
         Company company1 = new Company();
-        company1.setName("ООО ИТ-сервис");
+        company1.setName("IT Service Center");
         companyRepository.save(company1);
 
         Company company2 = new Company();
-        company2.setName("ОАО Протон-М");
+        company2.setName("Company1");
         companyRepository.save(company2);
 
         Company company3 = new Company();
-        company3.setName("ОАО Гермес");
+        company3.setName("Company2");
         companyRepository.save(company3);
 
 
         Department department1 = new Department();
-        department1.setName("Техотдел");
+        department1.setName("Department1");
         department1.setCompany(company1);
         departmentRepository.save(department1);
 
         Department department2 = new Department();
-        department2.setName("Бухгалтерия");
+        department2.setName("Department2");
         department2.setCompany(company2);
         departmentRepository.save(department2);
 
         Department department3 = new Department();
-        department3.setName("Плановый отдел");
+        department3.setName("Department3");
         department3.setCompany(company2);
         departmentRepository.save(department3);
 
@@ -129,67 +131,64 @@ public class DatabaseService {
 
 
         Category category1 = new Category();
-        category1.setName("Сервер/системный блок");
+        category1.setName("Computer");
         categoryRepository.save(category1);
 
         Category category2 = new Category();
-        category2.setName("Принтер/МФУ");
+        category2.setName("Printer");
         categoryRepository.save(category2);
 
         Category category3 = new Category();
-        category3.setName("Монитор");
+        category3.setName("Display");
         categoryRepository.save(category3);
 
 
         Employee employee1 = new Employee();
-        employee1.setFirstName("Иван");
-        employee1.setPatronymic("Иванович");
-        employee1.setSecondName("Иванов");
+        employee1.setFirstName("Ivan");
+        employee1.setPatronymic("Iv.");
+        employee1.setSecondName("Ivanov");
         employee1.setPost(post2);
         employee1.setDepartment(department1);
         employeeRepository.save(employee1);
 
         Employee employee2 = new Employee();
-        employee2.setFirstName("Петр");
-        employee2.setPatronymic("Петрович");
-        employee2.setSecondName("Петров");
+        employee2.setFirstName("Petr");
+        employee2.setPatronymic("Pt.");
+        employee2.setSecondName("Petrov");
         employee2.setPost(post3);
         employee2.setDepartment(department1);
         employeeRepository.save(employee2);
 
         Employee employee3 = new Employee();
-        employee3.setFirstName("Алла");
-        employee3.setPatronymic("Дмитриевна");
-        employee3.setSecondName("Коваль");
+        employee3.setFirstName("Alla");
+        employee3.setPatronymic("Dm.");
+        employee3.setSecondName("Koval");
         employee3.setPost(post1);
         employee3.setDepartment(department2);
         employeeRepository.save(employee3);
 
         Employee employee4 = new Employee();
-        employee4.setFirstName("Инна");
-        employee4.setPatronymic("Ивановна");
-        employee4.setSecondName("Головина");
+        employee4.setFirstName("Inna");
+        employee4.setPatronymic("Iv.");
+        employee4.setSecondName("Golovina");
         employee4.setPost(post2);
         employee4.setDepartment(department3);
         employeeRepository.save(employee4);
 
         Employee employee5 = new Employee();
-        employee5.setFirstName("Зоя");
-        employee5.setPatronymic("Павловна");
-        employee5.setSecondName("Костенко");
+        employee5.setFirstName("Zoya");
+        employee5.setPatronymic("Pl.");
+        employee5.setSecondName("Kostenko");
         employee5.setPost(post3);
         employee5.setDepartment(department3);
         employeeRepository.save(employee5);
 
-//        List<Contractor> contractors = new ArrayList<>();
         Contractor contractor1 = new Contractor();
         contractor1.setEmployee(employee1);
-//        contractors.add(contractor1);
         contractorRepository.save(contractor1);
 
         Contractor contractor2 = new Contractor();
         contractor2.setEmployee(employee2);
-//        contractors.add(contractor2);
         contractorRepository.save(contractor2);
 
         List<Equipment> equipments = new ArrayList<>();
@@ -223,7 +222,7 @@ public class DatabaseService {
                             Type.UNSCHEDULED
             );
             maintenance.setStatus(Status.COMPLETED); //
-            maintenance.setReason("Комментарий # " + ThreadLocalRandom.current().nextInt(1, 100));
+            maintenance.setReason("Comment#" + ThreadLocalRandom.current().nextInt(1, 100));
             maintenanceRepository.save(maintenance);
 
             maintenance = new Maintenance();
@@ -242,7 +241,7 @@ public class DatabaseService {
                                     rnd == 2 ? Status.COMPLETED : (
                                             rnd == 3 ? Status.REJECTED : Status.POSTPONED)))
             );
-            maintenance.setReason("Комментарий # " + ThreadLocalRandom.current().nextInt(1, 100));
+            maintenance.setReason("Comment#" + ThreadLocalRandom.current().nextInt(1, 100));
             maintenanceRepository.save(maintenance);
 
         }

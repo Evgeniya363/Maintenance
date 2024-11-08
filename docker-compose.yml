@@ -1,5 +1,5 @@
 version: '3'
-services:
+services:   # docker-compose для этапа разработки
   db:
     container_name: postgres
     image: 'postgres:16-alpine'
