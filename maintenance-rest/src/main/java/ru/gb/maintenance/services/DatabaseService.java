@@ -11,36 +11,38 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class DatabaseService {
     public static void InitDb(ConfigurableApplicationContext ctx) {
-        // Не перемещать, порядок важен!
+
         MaintenanceRepository maintenanceRepository = ctx.getBean(MaintenanceRepository.class);
-        maintenanceRepository.deleteAll();
+        if (maintenanceRepository.count() != 0)  // Данные о ТО имеются
+            return;
+//        maintenanceRepository.deleteAll();
 
         EquipmentRepository equipmentRepository = ctx.getBean(EquipmentRepository.class);
-        equipmentRepository.deleteAll();
+//        equipmentRepository.deleteAll();
 
         ContractorRepository contractorRepository = ctx.getBean(ContractorRepository.class);
-        contractorRepository.deleteAll();
+//        contractorRepository.deleteAll();
 
         EmployeeRepository employeeRepository = ctx.getBean(EmployeeRepository.class);
-        employeeRepository.deleteAll();
+//        employeeRepository.deleteAll();
 
         DepartmentRepository departmentRepository = ctx.getBean(DepartmentRepository.class);
-        departmentRepository.deleteAll();
+//        departmentRepository.deleteAll();
 
         PostRepository postRepository = ctx.getBean(PostRepository.class);
-        postRepository.deleteAll();
+//        postRepository.deleteAll();
 
         CategoryRepository categoryRepository = ctx.getBean(CategoryRepository.class);
-        categoryRepository.deleteAll();
+//        categoryRepository.deleteAll();
 
         CompanyRepository companyRepository = ctx.getBean(CompanyRepository.class);
-        companyRepository.deleteAll();
+//        companyRepository.deleteAll();
 
         ModelRepository modelRepository = ctx.getBean(ModelRepository.class);
-        modelRepository.deleteAll();
+//        modelRepository.deleteAll();
 
         ManufacturerRepository manufacturerRepository = ctx.getBean(ManufacturerRepository.class);
-        manufacturerRepository.deleteAll();
+//        manufacturerRepository.deleteAll();
 
 
         Post post1 = new Post();
@@ -181,15 +183,12 @@ public class DatabaseService {
         employee5.setDepartment(department3);
         employeeRepository.save(employee5);
 
-//        List<Contractor> contractors = new ArrayList<>();
         Contractor contractor1 = new Contractor();
         contractor1.setEmployee(employee1);
-//        contractors.add(contractor1);
         contractorRepository.save(contractor1);
 
         Contractor contractor2 = new Contractor();
         contractor2.setEmployee(employee2);
-//        contractors.add(contractor2);
         contractorRepository.save(contractor2);
 
         List<Equipment> equipments = new ArrayList<>();

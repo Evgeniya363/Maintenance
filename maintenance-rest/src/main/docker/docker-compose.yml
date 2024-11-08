@@ -15,14 +15,8 @@ services:
   app:
     container_name: app
     image: 'docker-spring-boot-postgres:latest'
-#    volumes:
-#      - ./pgdata:/var/lib/postgresql/data
-#    volumes:
-#      - type: bind
-#        source: ./DirectoryIWantToMountInDockerContainer
-#        target: /path/where/mount/source
-#        volume:
-#          nocopy: true  # flag to disable copying of data from a container when a volume is created
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
     build:
       context: .
       dockerfile: Dockerfile
@@ -39,7 +33,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=postgres
       - SPRING_JPA_HIBERNATE_DDL_AUTO=none
 
-#volumes:
-#  mntrest: {}
+volumes:
+  pgdata: {}
 
     
